@@ -7,3 +7,12 @@
 .navbar.logo{
     width:150px;
 }
+.navbar-menu{
+    display:flex;
+    list-style: none;
+    gap:20px;
+    color:coral;
+    font-size: 18px;
+
+
+}
