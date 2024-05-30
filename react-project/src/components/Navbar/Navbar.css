@@ -16,3 +16,22 @@
 
 
 }
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+}
+.navbar button{
+    background: transparent;
+    font-size: 16px;
+    color:burlywood;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition:0.3s;
+}
+.navbar button:hover{
+    background-color: #fff4f2;
+}
