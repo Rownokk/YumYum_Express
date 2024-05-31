@@ -11,3 +11,9 @@
     gap: max(2vw,10px);
     margin-top: 40px;
 }
+.app-download-platforms img{
+    width: max(30vw,120px);
+    max-width: 180px;
+    transition: 0.5s;
+    cursor: pointer;
+}
