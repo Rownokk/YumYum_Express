@@ -17,6 +17,10 @@
     transition: 0.5s;
     cursor: pointer;
 }
+.app-download-platforms img:hover{
+    transform: scale(1.05);
+}
+
 .app-download p{
     color:orangered;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
