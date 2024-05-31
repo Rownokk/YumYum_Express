@@ -27,7 +27,7 @@ gap: 80px;
 .footer-content-left li, .footer-content-right li,.footer-content-center li{
 list-style: none;
 margin-bottom:10px;
-
+cursor: pointer;
 }
 .footer-content-right h2, .footer-content-center h2{
     color: white
