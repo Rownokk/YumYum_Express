@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Footer.css'
 import { assets } from '../../assets/assets'
 const Footer=()=>{
@@ -7,7 +7,7 @@ return(
  <div className="footer-content">
     <div className="footer-content-left">
          <img src={assets.logo} alt=""/>
-         <p>LOrem ipsium is simply dumy text of the printing and typesetting industry.</p>
+         <p>Delight at Your Doorstep. Bon Appétit!</p>
    <div className="footer-social-icons">
     <img src ={assets.facebook_icon}alt=""/>
     <img src ={assets.twitter_icon}alt=""/>
@@ -29,8 +29,8 @@ return(
             GET IN TOUCH
         </h2>
         <ul> 
-<li>+1-212-456-7890</li>
-<li>contact@tomato.com</li>
+<li>+1-342-543-1234</li>
+<li>contact@YumYum_Express.com</li>
 
         </ul>
 
@@ -38,7 +38,7 @@ return(
     </div>
  </div>
  <hr/>
- <p className="footer-copyright">Copyright 2024 Tomato.com-All Right Reserved.</p>
+ <p className="footer-copyright">Copyright 2024 YumYum_Express.com-All Right Reserved.</p>
     </div>
 )
 
