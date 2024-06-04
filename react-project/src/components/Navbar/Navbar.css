@@ -5,6 +5,7 @@
     align-items: center;
 }
 .navbar.logo{
+    
     width:150px;
 }
 .navbar-menu{
@@ -12,7 +13,7 @@
     list-style: none;
     gap:20px;
     color:coral;
-    font-size: 18px;
+    font-size: 25px;
 
 
 }
