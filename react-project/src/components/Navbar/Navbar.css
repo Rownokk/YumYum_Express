@@ -1,102 +1,86 @@
-.navbar{
-    padding: 20px 0px;
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.navbar.logo{
-    
-    width:150px;
-}
-.navbar-menu{
-    display:flex;
+    padding: 0 8vw;
+    background-color: #fff;
+  }
+  
+  .logo {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    /* This ensures the logo scales correctly */
+  }
+  
+  .navbar-menu {
     list-style: none;
-    gap:20px;
-    color:coral;
-    font-size: 25px;
-
-
-}
-.navbar-right{
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-menu a,
+  .navbar-menu .active {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .navbar-menu .active {
+    font-weight: bold;
+  }
+  
+  .navbar-right {
     display: flex;
     align-items: center;
-    gap: 40px;
-    
-}
-.navbar button{
-    background: transparent;
-    font-size: 16px;
-    color:burlywood;
-    border: 1px solid tomato;
-    padding: 10px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition:0.3s;
-}
-.navbar button:hover{
-    background-color: #fff4f2;
-}
-.navbar .active{
-    padding-bottom: 2px;
-    border-bottom: 2px solid thistle;
-
-}
-.navbar li{
-    cursor: pointer;
-}
-.navbar-search-icon{
+    gap: 20px;
+  }
+  
+  .navbar-right img {
+    width: 24px;
+    height: auto;
+  }
+  
+  .navbar-search-icon {
     position: relative;
-}
-.navbar-search-icon .dot{
-position: absolute;
-min-width: 10px;
-min-height: 10px;
-background-color: tomato;
-border-radius: 5px;
-top: -8px;
-right: -8px;
-}
-@media (max-width:1050px){
-    .navbar.logo{
-        width: 140px;
+  }
+  
+  .navbar-search-icon .dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 750px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
     }
-    .navbar-menu{
-        gap: 20px;
-        font-size: 17px;
+  
+    .logo {
+      width: 60%; /* Adjust the width for mobile screens */
     }
-    .navbar-right{
-        gap: 30px;
+  
+    .navbar-menu {
+      flex-direction: column;
+      width: 100%;
     }
-    .navbar-right img{
-        width: 22px;
+  
+    .navbar-right {
+      width: 100%;
+      justify-content: space-between;
     }
-    .navbar-right button{
-        padding: 8px 25px;
-    }
-}
-@media (max-width:900px){
-    .navbar.logo{
-        width: 120px;
-    }
-    .navbar-menu{
-        gap: 15px;
-        font-size: 16px;
-    }
-    .navbar-right{
-        gap: 20px;
-    }
-    .navbar-right img{
-        width: 20px;
-    }
-    .navbar-right button{
-        padding: 7px 20px;
-        font: 15px;
-    }
-}
-@media (max-width:750px){
-    
-    .navbar-menu{
-        display: none;
-    }
-    
-}
+  }
+  
