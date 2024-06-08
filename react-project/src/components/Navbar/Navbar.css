@@ -32,7 +32,9 @@
 .navbar-menu a:hover,
 .navbar-menu .active {
   color: #e95c47; 
-  border-bottom: 2px solid #e95c47; 
+  
+ /* border-bottom: 2px solid #e95c47; */
+  border-bottom: 2px solid burlywood;
   font-weight: bold; 
 }
 
