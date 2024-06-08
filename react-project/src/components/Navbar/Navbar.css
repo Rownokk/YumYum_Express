@@ -1,48 +1,67 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 8vw;
-    background-color: #fff;
-  }
-  
-  .logo {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    /* This ensures the logo scales correctly */
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-menu a,
-  .navbar-menu .active {
-    text-decoration: none;
-    color:tomato;
-  }
-  
-  .navbar-menu .active {
-    font-weight: bold;
-  }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .navbar-right img {
-    width: 24px;
-    height: auto;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8vw;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.logo {
+  width: auto;
+  max-width: 100%;
+  height: auto; /* Ensures the logo scales correctly */
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: tomato;
+  font-weight: 400; 
+  transition: color 0.3s ease, border-bottom 0.3s ease; 
+  border-bottom: 2px solid transparent; 
+}
+
+.navbar-menu a:hover,
+.navbar-menu .active {
+  color: #e95c47; 
+  border-bottom: 2px solid #e95c47; 
+  font-weight: bold; 
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-right img {
+  width: 24px;
+  height: auto;
+}
+
+
   
   .navbar-search-icon {
-    position: relative;
-  }
+    position: relative; 
+    display: inline-block; 
+    padding: 8px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.navbar-search-icon:hover {
+    transform: scale(1.1); 
+    color: #e95c47; 
+}
+
   
   .navbar-search-icon .dot {
     position: absolute;
