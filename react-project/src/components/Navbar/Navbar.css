@@ -22,7 +22,7 @@
   .navbar-menu a,
   .navbar-menu .active {
     text-decoration: none;
-    color: #000;
+    color:tomato;
   }
   
   .navbar-menu .active {
@@ -55,12 +55,23 @@
   }
   
   button {
-    background-color: #000;
-    color: #fff;
-    padding: 8px 16px;
+    background-color: tomato; 
+    color: white;
+    padding: 10px 20px; 
     border: none;
+    border-radius: 10px; 
     cursor: pointer;
-  }
+    font-weight: 400; 
+    font-family: 'Arial', sans-serif; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+button:hover {
+    background-color: #e95c47; 
+    transform: translateY(-2px); 
+}
+
   
   @media (max-width: 750px) {
     .navbar {
