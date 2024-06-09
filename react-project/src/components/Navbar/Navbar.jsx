@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
   return (
     <div className="navbar">
-      <img src={assets.logo} alt="Logo" className="logo" />
+      <Link to='/'><img src={assets.logo} alt=" " className="logo" /></Link>
       <ul className="navbar-menu">
         <Link to='/' onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""}>Home</Link>
         <a href='#explore-menu' onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>Menu</a>
@@ -19,7 +19,8 @@ import { Link } from 'react-router-dom';
       <div className="navbar-right">
         <img src={assets.search_icon} alt="Search Icon" />
         <div className="navbar-search-icon">
-          <img src={assets.basket_icon} alt="Basket Icon" />
+          <Link to='/cart'>
+          <img src={assets.basket_icon} alt="Basket Icon" /></Link>
           <div className="dot"></div>
         </div>
         <button onClick={()=>setShowLogin(true)}>
@@ -31,4 +32,3 @@ import { Link } from 'react-router-dom';
 };
 
 export default Navbar;
-
