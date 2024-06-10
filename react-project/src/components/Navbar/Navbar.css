@@ -1,3 +1,61 @@
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color: lightcoral;
+  }
+  50% {
+    color: crimson;
+  }
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -5,6 +63,7 @@
   padding: 0 8vw;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .logo {
@@ -16,23 +75,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slideInFromRight 1s ease-out;
 }
 
 .logo-line1 {
   font-size: 1.8rem;
-  font-weight:400;
-  font-family:'Times New Roman', Times, serif;
-  color:lightcoral; /* Adjust as needed */
+  font-weight: 400;
+  font-family: 'Times New Roman', Times, serif;
+  color: lightcoral;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: pulse 3s infinite, swing 1.5s ease-in-out 1s;
 }
 
 .logo-line2 {
-  font-size: 2.7rem; /* Larger size for dramatic effect */
+  font-size: 2.7rem;
   font-weight: bold;
-  color:crimson; /* Dramatic color */
-  font-family: 'Cursive', 'Fantasy'; /* Add a dramatic font family */
-  letter-spacing: 2px; /* Add some letter spacing for effect */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add text shadow for effect */
+  color: crimson;
+  font-family: 'Cursive', 'Fantasy';
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: slideInFromRight 1s ease-out 0.5s both, colorPulse 3s infinite, pulse 3s infinite;
 }
 
 .navbar-menu {
@@ -49,6 +111,7 @@
   font-weight: 400;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   border-bottom: 2px solid transparent;
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .navbar-menu a:hover,
@@ -62,6 +125,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  animation: slideInFromRight 1s ease-out;
 }
 
 .navbar-right img {
@@ -118,7 +182,7 @@ button:hover {
   }
 
   .logo-text {
-    width: 60%; /* Adjust the width for mobile screens */
+    width: 60%;
     align-items: flex-start;
   }
 
@@ -132,5 +196,3 @@ button:hover {
     justify-content: space-between;
   }
 }
-
-  
