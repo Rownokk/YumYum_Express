@@ -9,7 +9,12 @@ import { Link } from 'react-router-dom';
 
   return (
     <div className="navbar">
-      <Link to='/'><img src={assets.logo} alt=" " className="logo" /></Link>
+            <Link to='/' className="logo">
+        <div className="logo-text">
+          <span className="logo-line1">YumYum</span>
+          <span className="logo-line2">Express</span>
+          </div>
+          </Link>
       <ul className="navbar-menu">
         <Link to='/' onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""}>Home</Link>
         <a href='#explore-menu' onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>Menu</a>

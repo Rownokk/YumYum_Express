@@ -6,7 +6,10 @@ return(
     <div className='footer' id='footer'>
  <div className="footer-content">
     <div className="footer-content-left">
-         <img src={assets.logo} alt=""/>
+    <div className="logo-textt">
+            <span className="logo-line">YumYum</span>
+            <span className="logo-line0">Express</span>
+          </div>
          <p>Delight at Your Doorstep. Bon Appétit!</p>
    <div className="footer-social-icons">
     <img src ={assets.facebook_icon}alt=""/>

@@ -53,10 +53,27 @@
     align-items: center;
 }
 
-.footer-logo img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
+.logo-textt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-line {
+    font-size: 1.8rem;
+  font-weight:400;
+  font-family:'Times New Roman', Times, serif;
+  color:lightcoral; /* Adjust as needed */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo-line0 {
+    font-size: 2.7rem; /* Larger size for dramatic effect */
+  font-weight: bold;
+  color:crimson; /* Dramatic color */
+  font-family: 'Cursive', 'Fantasy'; /* Add a dramatic font family */
+  letter-spacing: 2px; /* Add some letter spacing for effect */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 750px) {
@@ -69,8 +86,5 @@
     .footer-copyright {
         text-align: center;
     }
-
-    .footer-logo img {
-        width: 60%;
-    }
 }
+
