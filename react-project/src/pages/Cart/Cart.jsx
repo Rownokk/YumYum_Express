@@ -3,36 +3,67 @@ import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+    const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
 
-  return (
-    <div className='cart'>
-      <div className="cart-items">
-        <div className="cart-items-title">
-          <p>Items</p>
-          <p>Title</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Total</p>
-          <p>Remove</p>
-        </div>
-        <br />
-        <hr />
-        {food_list.map((item, index) => {
-if (cartItems[item._id]>0)
-  {
+    const getItemById = (id) => food_list.find(item => item._id === id);
+
     return (
-      <div className='cart-items-title  cart-items-item'>
-
-        <p> {item.name}</p>
-   
+        <div className='cart'>
+            <div className="cart-items">
+                <div className="cart-items-title">
+                    <p>Items</p>
+                    <p>Title</p>
+                    <p>Price</p>
+                    <p>Quantity</p>
+                    <p>Total</p>
+                    <p>Remove</p>
+                </div>
+                <hr />
+                {Object.keys(cartItems).map((itemId) => {
+                    const item = getItemById(itemId);
+                    if (!item) return null;
+                    return (
+                        <div key={itemId} className='cart-items-item'>
+                            <img src={item.image}alt=""/>
+                            <p>{item.name}</p>
+                            <p>Tk.{item.price}</p>
+                            <p>{cartItems[itemId]}</p>
+                            <p>Tk.{(item.price * cartItems[itemId]).toFixed(2)}</p>
+                            <button onClick={() => removeFromCart(itemId)}>Remove</button>
+                        </div>
+                    );
+                })}
+            </div>
+            <div className="cart-bottom">
+              <div className="cart-total">
+                <h2>Cart Totals</h2>
+                <div>
+                  <div className="cart-total-details">
+                    <p>subtotal</p>
+                    <p>{0}</p>
+                  </div>
+                  <div className="cart-total-details">
+                  <p>Delivery Fee</p>
+                  <p>{2}</p>
+                  </div>
+                  <div className="cart-total-details">
+                  <b>Total</b>
+                  </div>
+             </div>
+             <button>PROCEED TO CHECKOUT</button>
+              </div>
+              <div className="cart-promocode">
+                <div>
+                  <p>IT YOU HAVE A PROMOCODE , ENTER IT HERE</p>
+                <div className="cart-promocode-input">
+                  <input type="text" placeholder='promo code'/>
+               <button>submit</button>
+                </div>
+                                </div>
+              </div>
+            </div>
         </div>
-    )
-  }
-          })  }
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Cart;
