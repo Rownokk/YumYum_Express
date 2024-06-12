@@ -48,7 +48,7 @@ const Cart = () => {
                   </div>
                   <div className="cart-total-details">
                     <b>Total</b>
-                    <b>Tk.{getTotalCartAmount()+2}</b>
+                    <b>Tk.{getTotalCartAmount()+50}</b>
                   </div>
                 </div>
                 <button>PROCEED TO CHECKOUT</button>
