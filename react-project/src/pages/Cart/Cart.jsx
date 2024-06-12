@@ -3,7 +3,7 @@ import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 
 const Cart = () => {
-    const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+    const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
 
     const getItemById = (id) => food_list.find(item => item._id === id);
 
@@ -24,7 +24,7 @@ const Cart = () => {
                     if (!item) return null;
                     return (
                         <div key={itemId} className='cart-items-item'>
-                            <img src={item.image}alt=""/>
+                            <img src={item.image} alt=""/>
                             <p>{item.name}</p>
                             <p>Tk.{item.price}</p>
                             <p>{cartItems[itemId]}</p>
@@ -39,27 +39,28 @@ const Cart = () => {
                 <h2>Cart Totals</h2>
                 <div>
                   <div className="cart-total-details">
-                    <p>subtotal</p>
-                    <p>{0}</p>
+                    <p>Subtotal</p>
+                    <p>Tk.{getTotalCartAmount()}</p> {/* Use getTotalCartAmount function */}
                   </div>
                   <div className="cart-total-details">
-                  <p>Delivery Fee</p>
-                  <p>{2}</p>
+                    <p>Delivery Fee</p>
+                    <p>Tk.{ 50}</p> {/* Use getTotalCartAmount function */}
                   </div>
                   <div className="cart-total-details">
-                  <b>Total</b>
+                    <b>Total</b>
+                    <b>Tk.{getTotalCartAmount()+2}</b>
                   </div>
-             </div>
-             <button>PROCEED TO CHECKOUT</button>
+                </div>
+                <button>PROCEED TO CHECKOUT</button>
               </div>
               <div className="cart-promocode">
                 <div>
-                  <p>IT YOU HAVE A PROMOCODE , ENTER IT HERE</p>
-                <div className="cart-promocode-input">
-                  <input type="text" placeholder='promo code'/>
-               <button>submit</button>
+                  <p>IF YOU HAVE A PROMOCODE, ENTER IT HERE</p>
+                  <div className="cart-promocode-input">
+                    <input type="text" placeholder='promo code'/>
+                    <button>Submit</button>
+                  </div>
                 </div>
-                                </div>
               </div>
             </div>
         </div>
