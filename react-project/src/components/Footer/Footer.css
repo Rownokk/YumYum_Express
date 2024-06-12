@@ -1,6 +1,6 @@
 .footer {
-    color: #d9d9d9;
-    background-color: #323232;
+    color: #f0f0f0; /* Light grey for text */
+    background-color: #1e1e1e; /* Dark grey background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,20 +30,45 @@
     cursor: pointer;
 }
 
-.footer-content-right h2, .footer-content-center h2 {
-    color: white;
+.footer-content-left li:hover, .footer-content-right li:hover, .footer-content-center li:hover {
+    text-decoration: underline;
+    color: lightcoral; /* Dark orange color for hover effect */
 }
 
+.footer-content-right h2, .footer-content-center h2 {
+    color: #ffffff; /* White color for headings */
+    font-size: 1.5rem; /* Keep the heading size consistent */
+}
+/*
 .footer-social-icons img {
     width: 40px;
     margin-right: 15px;
+    cursor: pointer;
+}*/
+.footer-social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.footer-social-icons img {
+    width: 50px; /* Reduced size for a more refined look */
+    height: 50px; /* Ensures icons are square */
+    padding: 5px; /* Adds padding around icons */
+    border-radius: 50%; /* Makes icons round */
+    background-color: #2a2a2a; /* Adds a dark background for icons */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+    cursor: pointer;
+}
+
+.footer-social-icons img:hover {
+    background-color:crimson; /* Changes background on hover */
 }
 
 .footer hr {
     width: 100px;
     height: 2px;
     margin: 20px 0;
-    background-color: gray;
+    background-color: #a9a9a9; /* Light grey for the horizontal line */
     border: none;
 }
 
@@ -61,19 +86,19 @@
 
 .logo-line {
     font-size: 1.8rem;
-  font-weight:400;
-  font-family:'Times New Roman', Times, serif;
-  color:lightcoral; /* Adjust as needed */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    color: lightcoral; /* Dark orange color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .logo-line0 {
-    font-size: 2.7rem; /* Larger size for dramatic effect */
-  font-weight: bold;
-  color:crimson; /* Dramatic color */
-  font-family: 'Cursive', 'Fantasy'; /* Add a dramatic font family */
-  letter-spacing: 2px; /* Add some letter spacing for effect */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 2.7rem;
+    font-weight: bold;
+    color:crimson; /* Orange red color */
+    font-family: 'Cursive', 'Fantasy';
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 750px) {
@@ -85,6 +110,6 @@
 
     .footer-copyright {
         text-align: center;
+        
     }
 }
-
