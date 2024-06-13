@@ -1,9 +1,23 @@
 .header {
     height: 60vh; /* Adjusted height for better visibility */
     margin: 30px auto;
-    background: url('/header_img.png') no-repeat center center;
+       /* background: url('/header_img.png') no-repeat center center;*/
+   
+    background: url('https://png.pngtree.com/background/20240118/original/pngtree-3d-render-of-food-delivery-picture-image_7327073.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+    overflow: hidden; /* Ensure no overflow from children elements */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.3); */
 }
 
 .header-contents {
@@ -11,45 +25,84 @@
     top: 50%;
     transform: translateY(-50%);
     left: 5%; /* Adjusted left position for alignment */
-    color: #fff; /* White text color */
-    font-family: 'Arial', sans-serif; /* Choose an appropriate classic font */
+    color: #f0f0f0; /* Lighter text color */
+    font-family: 'Arial', sans-serif; /* Modern, professional font */
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text readability */
-    border-radius: 20px; /* Increased border radius for a more rectangular look */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    border-radius: 15px; /* Smoothed border radius */
     width: 80%; /* Adjusted width for a more rectangular appearance */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
 }
 
 .header-contents h2 {
-    font-size: 3rem; /* Large font size for header */
-    font-weight: 700; /* Bold font weight */
-    margin-bottom: 20px; /* Increased spacing below header */
+    font-size: 2rem; /* Slightly smaller, more modern font size */
+    font-weight: 500; /* Bold font weight */
+    margin-bottom: 15px; /* Adjusted spacing below header */
+    animation: slideInFromLeft 1s ease-in-out; /* Slide-in animation */
+    color: burlywood;
 }
 
 .header-contents p {
-    font-size: 1.5rem; /* Medium font size for paragraph */
-    line-height: 1.6; /* Improved line height for readability */
-    margin-bottom: 30px; /* Increased spacing below paragraph */
+    font-size: 1.3rem; /* Medium font size for paragraph */
+    line-height: 1.5; /* Improved line height for readability */
+    margin-bottom: 20px; /* Increased spacing below paragraph */
+    animation: slideInFromLeft 1.2s ease-in-out; /* Slide-in animation */
 }
 
 .header-contents button {
     border: none;
-    background-color: #ff6347; /* Tomato red button background */
+    background: linear-gradient(to right,  red, red); /* Gradient background for button */
     color: #fff; /* White button text */
-    font-size: 1.2rem; /* Medium button font size */
-    font-weight: 600; /* Medium button font weight */
+    font-size: 1rem; /* Medium button font size */
+    font-weight: 400; /* Medium button font weight */
     padding: 12px 24px; /* Increased button padding */
     border-radius: 30px; /* Rounded button edges */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Smooth button transition */
+    
+    transition: background 0.3s, color 0.3s, transform 0.3s; /* Smooth button transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for button */
+    animation: bounceIn 1s ease-in-out; /* Bounce-in animation */
 }
 
 .header-contents button:hover {
-    background-color: #e55e40; /* Darker shade on hover */
+    background: linear-gradient(to right, #e55e40, #d44122); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    70% {
+        transform: translateY(-7px);
+    }
 }
 
 @media (max-width: 1050px) {
     .header-contents {
         max-width: 90%; /* Adjusted max-width for responsiveness */
+    }
+
+    .header-contents h2 {
+        font-size: 2rem; /* Adjusted font size for smaller screens */
+    }
+
+    .header-contents p {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
     }
 }
 
@@ -59,7 +112,12 @@
         padding: 15px; /* Reduced padding for smaller screens */
     }
 
+    .header-contents h2 {
+        font-size: 1rem; /* Adjusted font size for very small screens */
+    }
+
     .header-contents p {
         display: none; /* Hide paragraph on smaller screens */
     }
 }
+
