@@ -100,11 +100,12 @@
     .header-contents h2 {
         font-size: 2rem; /* Adjusted font size for smaller screens */
     }
-
+    
     .header-contents p {
         font-size: 1rem; /* Adjusted font size for smaller screens */
     }
 }
+
 
 @media (max-width: 750px) {
     .header-contents {
@@ -115,7 +116,7 @@
     .header-contents h2 {
         font-size: 1rem; /* Adjusted font size for very small screens */
     }
-
+    
     .header-contents p {
         display: none; /* Hide paragraph on smaller screens */
     }
