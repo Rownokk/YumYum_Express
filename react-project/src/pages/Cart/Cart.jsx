@@ -35,33 +35,33 @@ const Cart = () => {
                 })}
             </div>
             <div className="cart-bottom">
-              <div className="cart-total">
-                <h2>Cart Totals</h2>
-                <div>
-                  <div className="cart-total-details">
-                    <p>Subtotal</p>
-                    <p>Tk.{getTotalCartAmount()}</p> {/* Use getTotalCartAmount function */}
-                  </div>
-                  <div className="cart-total-details">
-                    <p>Delivery Fee</p>
-                    <p>Tk.{ 50}</p> {/* Use getTotalCartAmount function */}
-                  </div>
-                  <div className="cart-total-details">
-                    <b>Total</b>
-                    <b>Tk.{getTotalCartAmount()+50}</b>
-                  </div>
+                <div className="cart-total">
+                    <h2>Cart Totals</h2>
+                    <div>
+                        <div className="cart-total-details">
+                            <p>Subtotal</p>
+                            <p>Tk.{getTotalCartAmount()}</p>
+                        </div>
+                        <div className="cart-total-details">
+                            <p>Delivery Fee</p>
+                            <p>Tk.{50}</p>
+                        </div>
+                        <div className="cart-total-details">
+                            <b>Total</b>
+                            <b>Tk.{getTotalCartAmount() + 50}</b>
+                        </div>
+                    </div>
+                    <button>PROCEED TO CHECKOUT</button>
                 </div>
-                <button>PROCEED TO CHECKOUT</button>
-              </div>
-              <div className="cart-promocode">
-                <div>
-                  <p>IF YOU HAVE A PROMOCODE, ENTER IT HERE</p>
-                  <div className="cart-promocode-input">
-                    <input type="text" placeholder='promo code'/>
-                    <button>Submit</button>
-                  </div>
+                <div className="cart-promocode">
+                    <div>
+                        <p>IF YOU HAVE A PROMOCODE, ENTER IT HERE</p>
+                        <div className="cart-promocode-input">
+                            <input type="text" placeholder='promo code'/>
+                            <button>Submit</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     );
