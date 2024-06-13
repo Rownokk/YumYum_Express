@@ -1,98 +1,142 @@
-/* Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* Cart.css */
 
-body {
-    font-family: 'Roboto', sans-serif; /* Updated font for better readability */
-    background-color: #f9f9f9;
-    color: #333; /* Improved text color for better contrast */
-    line-height: 1.6; /* Improved line spacing for better readability */
-}
-
-/* Cart Container */
 .cart {
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Ensure it occupies full width */
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
-/* Cart Items */
-.cart-items-title,
-.cart-items-item {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Improved grid layout */
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+.cart-items {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .cart-items-title {
-    background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
     font-weight: bold;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.cart-items-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
 }
 
 .cart-items-item img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     border-radius: 4px;
 }
 
 .cart-items-item p {
     margin: 0;
-    padding: 5px;
 }
 
 .cart-items-item button {
-    background-color: #ff6347;
-    color: white;
+    background: #ff6347;
+    color: #fff;
     border: none;
+    padding: 6px 10px;
     border-radius: 4px;
-    padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s;
 }
 
 .cart-items-item button:hover {
-    background-color: #ff6347; /* Darker shade on hover */
+    background: #ff6347;
 }
 
-/* Cart Bottom Section */
 .cart-bottom {
+    width: 100%;
+    max-width: 900px;
     display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.cart-total,
-.cart-promocode {
-    padding: 20px;
-    background-color: #f0f0f0;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.cart-total, .cart-promocode {
+    width: 48%;
+}
+
+.cart-total {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.cart-total h2 {
+    margin-top: 0;
     margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
 }
 
-.cart-total h2,
-.cart-promocode p {
-    margin-bottom: 10px;
-}
-
-.cart-total-details,
-.cart-promocode-input {
+.cart-total-details {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    font-size: 1em;
 }
 
 .cart-total-details b {
     font-weight: bold;
+}
+
+.cart-total button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #ff6347;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cart-total button:hover {
+    background: #ff6347;
+}
+
+.cart-promocode {
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.cart-promocode p {
+    margin: 0 0 10px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.cart-promocode-input {
+    display: flex;
+    gap: 10px;
 }
 
 .cart-promocode-input input {
@@ -100,85 +144,20 @@ body {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-right: 10px;
+    font-size: 0.9em;
 }
 
 .cart-promocode-input button {
-    background-color: #ff6347;
-    color: white;
+    padding: 8px 12px;
     border: none;
     border-radius: 4px;
-    padding: 8px 15px;
+    background: #ff6347;
+    color: #fff;
+    font-size: 0.9em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s;
 }
 
 .cart-promocode-input button:hover {
-    background-color: #ff6347; /* Darker shade on hover */
-}
-
-/* Submit Button */
-button[type="submit"] {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 15px; /* Adjusted padding to make it smaller */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block; /* Ensure button displays as inline-block element */
-}
-
-button[type="submit"]:hover {
-    background-color: #ff6347; /* Darker shade on hover */
-}
-
-/* Media Query for Mobile */
-@media screen and (max-width: 768px) {
-    .cart-items-title {
-        display: none;
-    }
-
-    .cart-items-item {
-        grid-template-columns: 1fr 3fr 1fr; /* Adjusted grid layout for mobile */
-        padding: 10px;
-        text-align: center;
-    }
-
-    .cart-items-item img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .cart-items-item p {
-        padding: 5px 0;
-    }
-
-    .cart-items-item button {
-        padding: 5px 10px;
-    }
-
-    .cart-bottom {
-        flex-direction: column;
-    }
-
-    .cart-promocode-input {
-        margin-top: 20px;
-    }
-
-    .cart-promocode-input input {
-        width: calc(100% - 95px); /* Adjust width to fit within small space */
-        margin-right: 10px;
-    }
-
-    .cart-promocode-input button {
-        width: 75px; /* Adjust width to fit within small space */
-        padding: 10px 5px; /* Adjust padding */
-        margin-top: 10px; /* Add space between input and button */
-    }
-
-    /* Adjust submit button size for mobile */
-    button[type="submit"] {
-        padding: 8px 15px;
-    }
+    background: #ff6347;
 }
