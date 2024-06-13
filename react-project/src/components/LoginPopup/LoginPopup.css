@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #333; /* Darker color for the title */
+    color: crimson; /* Darker color for the title */
     font-weight: 600; /* Make the title stand out */
 }
 
@@ -74,7 +74,7 @@
     padding: 12px;
     border-radius: 5px;
     color: white;
-    background-color: #ff6347; /* Use a specific shade of tomato */
+    background-color: crimson; /* Use a specific shade of tomato */
     font-size: 16px; /* Slightly larger font for the button */
     font-weight: 600; /* Make the button text bold */
     cursor: pointer;
@@ -82,7 +82,7 @@
 }
 
 .login-popup-container button:hover {
-    background-color: #e55347; /* Slightly darker shade on hover */
+    background-color: lightcoral; /* Slightly darker shade on hover */
 }
 
 /* Terms and conditions */
@@ -102,7 +102,7 @@
 
 /* Highlighted text */
 .login-popup p span {
-    color: #ff6347; /* Use the same tomato shade for consistency */
+    color: crimson; /* Use the same tomato shade for consistency */
     font-weight: 600; /* Make the text bold */
     cursor: pointer;
 }
