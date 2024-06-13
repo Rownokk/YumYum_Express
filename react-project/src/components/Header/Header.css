@@ -1,54 +1,65 @@
-.header{
-    height: 34vw;
-    margin:30px auto;
-    background: url('/header_img.png')no-repeat;
-    background-size: contain;
+.header {
+    height: 60vh; /* Adjusted height for better visibility */
+    margin: 30px auto;
+    background: url('/header_img.png') no-repeat center center;
+    background-size: cover;
     position: relative;
 }
-.header-contents{
+
+.header-contents {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadeIn 3s;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%; /* Adjusted left position for alignment */
+    color: #fff; /* White text color */
+    font-family: 'Arial', sans-serif; /* Choose an appropriate classic font */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text readability */
+    border-radius: 20px; /* Increased border radius for a more rectangular look */
+    width: 80%; /* Adjusted width for a more rectangular appearance */
 }
-.header-contents h2{
-    font-weight: 500;
-    color: azure;
-    font-size: max(3.5vw,22px);
+
+.header-contents h2 {
+    font-size: 3rem; /* Large font size for header */
+    font-weight: 700; /* Bold font weight */
+    margin-bottom: 20px; /* Increased spacing below header */
 }
-.header-contents p{
-    color: azure;
-    font-size: 1vw;
+
+.header-contents p {
+    font-size: 1.5rem; /* Medium font size for paragraph */
+    line-height: 1.6; /* Improved line height for readability */
+    margin-bottom: 30px; /* Increased spacing below paragraph */
 }
-.header-contents button{
+
+.header-contents button {
     border: none;
-    color: burlywood;
-    font-weight: 500;
-    padding: 1vw 2.5vw;
-    background-color: azure;
-    font-size: max(1vw, 13px);
-    border-radius: 50px;
+    background-color: #ff6347; /* Tomato red button background */
+    color: #fff; /* White button text */
+    font-size: 1.2rem; /* Medium button font size */
+    font-weight: 600; /* Medium button font weight */
+    padding: 12px 24px; /* Increased button padding */
+    border-radius: 30px; /* Rounded button edges */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth button transition */
 }
-@media (max-width:1050px){
-   
-    .header-contents{
-        max-width: 45%;
+
+.header-contents button:hover {
+    background-color: #e55e40; /* Darker shade on hover */
+}
+
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 90%; /* Adjusted max-width for responsiveness */
     }
 }
-@media (max-width:750px){
-    
-    .header-contents{
-        max-width: 65%;
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 100%; /* Adjusted max-width for smaller screens */
+        padding: 15px; /* Reduced padding for smaller screens */
     }
-    .header-contents p{
-        display: none;
-    }
-    .header-contents button{
-        padding: 2vw 4vw;
+
+    .header-contents p {
+        display: none; /* Hide paragraph on smaller screens */
     }
 }
