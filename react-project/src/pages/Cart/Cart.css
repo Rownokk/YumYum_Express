@@ -229,6 +229,10 @@
         height: 30px;
     }
 
+    .cart-items-title, .cart-items-item {
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+
     .cart-total h2, .cart-total-details, .cart-promocode p {
         font-size: 0.9em;
     }
@@ -246,3 +250,4 @@
         width: 100%;
     }
 }
+
