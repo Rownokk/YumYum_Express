@@ -14,7 +14,7 @@
   .food-display h2 {
     font-size: max(2.5vw, 24px); /* Responsive font size */
     font-weight: 700; /* Increased font weight for emphasis */
-    color: #333; /* Darker text color for readability */
+    color:crimson; /* Darker text color for readability */
     margin-bottom: 20px; /* Space below the heading */
   }
   

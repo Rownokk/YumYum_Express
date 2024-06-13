@@ -107,8 +107,8 @@
 
 .navbar-menu a {
   text-decoration: none;
-  color: tomato;
-  font-weight: 400;
+  color: crimson;
+  font-weight: 500;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   border-bottom: 2px solid transparent;
   animation: slideInFromLeft 1s ease-out;
@@ -116,7 +116,7 @@
 
 .navbar-menu a:hover,
 .navbar-menu .active {
-  color: #e95c47;
+  color: lightcoral;
   border-bottom: 2px solid burlywood;
   font-weight: bold;
 }
@@ -143,7 +143,7 @@
 
 .navbar-search-icon:hover {
   transform: scale(1.1);
-  color: #e95c47;
+  color: lightcoral;
 }
 
 .navbar-search-icon .dot {
@@ -157,7 +157,7 @@
 }
 
 button {
-  background-color: tomato;
+  background-color: crimson;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -170,7 +170,7 @@ button {
 }
 
 button:hover {
-  background-color: #e95c47;
+  background-color: lightcoral;
   transform: translateY(-2px);
 }
 
