@@ -1,16 +1,80 @@
 .place-order {
     display: flex;
-    align-items: start;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Changed from start to flex-start */
     justify-content: space-between;
-    gap: 50px;
-    margin-top: 100px;
+    gap: 20px; /* Reduced gap for better spacing */
+    margin-top: 50px; /* Reduced margin for a more balanced layout */
+    padding: 20px; /* Added padding for better spacing around the form */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added shadow for a card-like effect */
+    background-color: #fff; /* Added background color */
+    border-radius: 8px; /* Added border radius for rounded corners */
 }
+
 .place-order-left {
-    width: 100%;
-    max-width: max(30%, 500px);
+    flex: 1; /* Allow it to take up available space */
+    max-width: 100%;
 }
+
 .place-order-left .title {
-    font-size: 30px;
+    font-size: 24px; /* Reduced font size for better balance */
     font-weight: 600;
-    margin-bottom: 50px;
+    margin-bottom: 20px; /* Reduced margin for better spacing */
 }
+
+.multi-fields {
+    display: flex;
+    gap: 10px; /* Added gap for better spacing between fields */
+    margin-bottom: 20px; /* Added margin bottom for spacing between rows */
+}
+
+.multi-fields input {
+    flex: 1; /* Make inputs take equal space */
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px; /* Added padding for better usability */
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+    border: 1px solid #ccc; /* Added border */
+    border-radius: 4px; /* Added border radius */
+    box-sizing: border-box; /* Ensure padding and border are included in width and height */
+}
+
+.place-order-right {
+    flex: 1;
+    max-width: 100%;
+}
+
+.cart-total {
+    padding: 20px; /* Added padding */
+    border: 1px solid #eee; /* Added border */
+    border-radius: 8px; /* Added border radius */
+    background-color: #f9f9f9; /* Added background color */
+}
+
+.cart-total h2 {
+    margin-bottom: 20px; /* Added margin for better spacing */
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Added margin bottom */
+}
+
+.cart-total button {
+    width: 100%;
+    padding: 10px;
+    background-color:crimson; /* Changed to a professional blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: lightcoral; /* Darker blue on hover */
+}
+
