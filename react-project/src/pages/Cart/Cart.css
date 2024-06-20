@@ -58,9 +58,7 @@
     transition: background 0.3s;
 }
 
-.cart-items-item button:hover {
-    background:#e5533c;
-}
+
 
 .cart-bottom {
     width: 100%;
@@ -122,16 +120,14 @@
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background:  #e5533c;
+ 
     color: #fff;
     font-size: 1em;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-.cart-total button:hover {
-    background: #e5533c;
-}
+
 
 .cart-promocode {
     padding: 20px;
@@ -170,9 +166,7 @@
     transition: background 0.3s;
 }
 
-.cart-promocode-input button:hover {
-    background:   #e5533c;
-}
+
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
