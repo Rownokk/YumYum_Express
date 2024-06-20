@@ -1,14 +1,121 @@
-.navbar{
+/* Keyframes for animations */
+@keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes colorPulse {
+    0%, 100% {
+      color: lightcoral;
+    }
+    50% {
+      color: crimson;
+    }
+  }
+  
+  @keyframes swing {
+    20% {
+      transform: rotate(15deg);
+    }
+    40% {
+      transform: rotate(-10deg);
+    }
+    60% {
+      transform: rotate(5deg);
+    }
+    80% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  /* Navbar styling */
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4%;
-
-}
-.navbar .logo{
-    width: max(10%,80px);
-}
-.navbar .profile{
-    width:40px;
-    
-}
+    padding: 0 8vw;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo styling */
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    animation: slideInFromRight 1s ease-out;
+  }
+  
+  .logo img {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo image and text */
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo-line1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    color: lightcoral;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: pulse 3s infinite, swing 1.5s ease-in-out 1s;
+  }
+  
+  .logo-line2 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: crimson;
+    font-family: 'Cursive', 'Fantasy';
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: colorPulse 3s infinite, pulse 3s infinite;
+  }
+  
+  /* Profile image styling */
+  .profile {
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Make profile image circular */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 750px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    .logo-text {
+      align-items: flex-start;
+    }
+  
+    .profile {
+      align-self: flex-end;
+    }
+  }
+  
