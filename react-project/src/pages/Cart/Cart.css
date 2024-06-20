@@ -49,7 +49,7 @@
 }
 
 .cart-items-item button {
-    background:  #e5533c;
+  
     color: #fff;
     border: none;
     padding: 6px 10px;
@@ -59,7 +59,7 @@
 }
 
 .cart-items-item button:hover {
-    background: #e5533c;
+    background:#e5533c;
 }
 
 .cart-bottom {
