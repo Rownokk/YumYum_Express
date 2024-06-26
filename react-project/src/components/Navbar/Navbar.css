@@ -1,3 +1,5 @@
+/* Navbar.css */
+
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
@@ -64,6 +66,7 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideInFromLeft 1s ease-out;
+  border-radius: 15px; /* Rounded corners */
 }
 
 .logo {
