@@ -1,6 +1,6 @@
 .footer {
-    color: #f0f0f0; /* Light grey for text */
-    background-color: #1e1e1e; /* Dark grey background */
+    color:#ffffff; /* Light grey for text */
+    background-color:lightcoral; /* Dark grey background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +32,7 @@
 
 .footer-content-left li:hover, .footer-content-right li:hover, .footer-content-center li:hover {
     text-decoration: underline;
-    color: lightcoral; /* Dark orange color for hover effect */
+    color: crimson; /* Dark orange color for hover effect */
 }
 
 .footer-content-right h2, .footer-content-center h2 {
@@ -55,7 +55,7 @@
     height: 50px; /* Ensures icons are square */
     padding: 5px; /* Adds padding around icons */
     border-radius: 50%; /* Makes icons round */
-    background-color: #2a2a2a; /* Adds a dark background for icons */
+    background-color:lightcoral; /* Adds a dark background for icons */
     transition: background-color 0.3s ease; /* Smooth transition effect */
     cursor: pointer;
 }
@@ -88,7 +88,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     font-family: 'Times New Roman', Times, serif;
-    color: lightcoral; /* Dark orange color */
+    color: crimson; /* Dark orange color */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -113,3 +113,4 @@
         
     }
 }
+make the footer little small it is so big
