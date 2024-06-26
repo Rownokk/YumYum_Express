@@ -1,14 +1,14 @@
 .header {
     height: 60vh; /* Adjusted height for better visibility */
     margin: 30px auto;
-       /* background: url('/header_img.png') no-repeat center center;*/
-   
     background: url('https://png.pngtree.com/background/20240118/original/pngtree-3d-render-of-food-delivery-picture-image_7327073.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
     overflow: hidden; /* Ensure no overflow from children elements */
+    border-radius: 15px; /* Rounded corners */
 }
+
 
 .header::before {
     content: '';

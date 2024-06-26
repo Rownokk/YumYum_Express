@@ -1,0 +1,205 @@
+/* Home.css */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f0f0f0, #ffffff); /* Soft gradient background */
+    color: #333; /* Dark text color for readability */
+    min-height: 100vh; /* Ensure the background covers the whole viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+    color: #333; /* Dark text color for readability */
+}
+
+header {
+    background-color: #1c2833; /* Darker charcoal grey for header */
+    color: #ecf0f1; /* Light text color for readability */
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 12px 12px 0 0; /* Rounded top corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px; /* Adding padding for spacing */
+    background-color: #ffffff; /* White background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #333; /* Dark text color */
+}
+
+.explore-menu h1 {
+    color: crimson; /* Brown heading color */
+    font-weight: 500; /* Medium font weight */
+    font-size: 24px; /* Adjusted font size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    font-size: 16px; /* Font size for text content */
+    line-height: 1.6; /* Line height for readability */
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0;
+    overflow-x: auto; /* Horizontal scrolling */
+    padding-bottom: 10px; /* Space at the bottom */
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.explore-menu-list-item img {
+    width: 80px; /* Fixed width for images */
+    height: 80px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular image */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Smooth transform */
+}
+
+.explore-menu-list-item img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: #747474; /* Gray text color */
+    font-size: 16px; /* Font size for text */
+    cursor: pointer;
+}
+
+.explore-menu hr {
+    margin: 10px 0;
+    height: 1px; /* Reduced height */
+    background-color: #e2e2e2; /* Light gray separator */
+    border: none;
+}
+
+.explore-menu-list-item .active {
+    border: 2px solid crimson; /* Subtle brown border for active state */
+    padding: 4px; /* Increased padding for better spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.food-display {
+    margin-top: 30px;
+    padding: 20px; /* Adding padding for breathing room */
+    background-color: #f9f9f9; /* Light gray background for contrast */
+    border-radius: 15px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+
+    /* Additional styles for an extraordinary look */
+    border: 1px solid #ddd; /* Light border for separation */
+}
+
+.food-display h2 {
+    font-size: max(2.5vw, 24px); /* Responsive font size */
+    font-weight: 700; /* Increased font weight for emphasis */
+    color: crimson; /* Darker text color for readability */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px; /* Gap between grid items */
+    row-gap: 50px; /* Vertical gap between rows */
+}
+
+.food-display-list > div {
+    background-color: #fff; /* White background for each item */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding around each item */
+}
+
+.food-display-list > div:hover {
+    transform: translateY(-5px); /* Lift the item on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.app-download {
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Padding for content */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align content */
+    color: #333; /* Dark text color */
+}
+
+.app-download h2 {
+    color: crimson; /* Brown heading color */
+    font-weight: 500; /* Medium font weight */
+    font-size: 24px; /* Adjusted font size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.app-download-text {
+    font-size: 16px; /* Font size for text content */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 20px; /* Space below text */
+}
+
+.app-download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Gap between buttons */
+    margin-top: 20px; /* Space above buttons */
+}
+
+.app-download-buttons a {
+    display: inline-block;
+    padding: 10px 20px; /* Padding for buttons */
+    background-color: crimson; /* Crimson background */
+    color: #ffffff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Medium font weight */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.app-download-buttons a:hover {
+    background-color: #8e44ad; /* Darker background on hover */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .explore-menu-text {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust grid columns for smaller screens */
+    }
+
+    .app-download-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center; /* Center-align buttons */
+    }
+
+    .app-download-buttons a {
+        width: 100%; /* Full width for buttons on smaller screens */
+    }
+}
