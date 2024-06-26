@@ -1,6 +1,6 @@
 .footer {
-    color:#ffffff; /* Light grey for text */
-    background-color:lightcoral; /* Dark grey background */
+    color:#f0f0f0; /* Light grey for text */
+    background-color:  #1e1e1e; /* Dark grey background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,13 +55,13 @@
     height: 50px; /* Ensures icons are square */
     padding: 5px; /* Adds padding around icons */
     border-radius: 50%; /* Makes icons round */
-    background-color:lightcoral; /* Adds a dark background for icons */
+    background-color:#1e1e1e; /* Adds a dark background for icons */
     transition: background-color 0.3s ease; /* Smooth transition effect */
     cursor: pointer;
 }
 
 .footer-social-icons img:hover {
-    background-color:crimson; /* Changes background on hover */
+    background-color:cornflowerblue; /* Changes background on hover */
 }
 
 .footer hr {
@@ -88,7 +88,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     font-family: 'Times New Roman', Times, serif;
-    color: crimson; /* Dark orange color */
+    color: lightcoral; /* Dark orange color */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -113,4 +113,4 @@
         
     }
 }
-make the footer little small it is so big
+
