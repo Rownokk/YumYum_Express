@@ -4,17 +4,28 @@
     padding: 20px;
     font-family: Arial, sans-serif;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.5; /* Adjusted line height for better spacing */
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  
+.list h2 {
+  font-size: 2em; /* Adjusted font size for heading */
+  font-weight: bold; /* Added bold font weight */
+  margin-bottom: 20px; /* Increased bottom margin for spacing */
+}
+  .list p {
+    font-size: 1.1em; /* Adjusted font size for paragraphs */
+    margin-bottom: 8px; /* Reduced margin for tighter spacing */
+    text-align: center;
   }
   
-  .list p {
-    font-size: 1.3em;
-    margin-bottom: 8px;
-    text-align: center;
+  .list p.all-foods {
+    font-weight: bold; /* Added bold font weight for the heading */
   }
   
   .list-table {
@@ -47,7 +58,7 @@
     background-color: crimson;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 6px 10px; /* Adjusted padding for smaller button */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -60,11 +71,11 @@
   @media (max-width: 768px) {
     .list {
       padding: 15px;
-      font-size: 0.9em;
+      font-size: 1em; /* Adjusted font size for smaller screens */
     }
   
     .list p {
-      font-size: 1.2em;
+      font-size: 1.1em; /* Further reduced font size for paragraphs */
     }
   
     .list-table-format {
@@ -73,11 +84,11 @@
     }
   
     .list-table-format img {
-      margin-bottom: 10px;
+      margin-bottom: 8px; /* Reduced margin for images */
     }
   
     .remove-button {
-      margin-top: 10px;
+      margin-top: 8px; /* Adjusted margin for smaller screens */
     }
   }
   
