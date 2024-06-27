@@ -101,6 +101,18 @@
     border-radius: 50%; /* Make profile image circular */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  .admin-greeting {
+    text-align: right;
+    margin-right: 10px; /* Adjust this if needed */
+    font-size: 18px; /* Adjust this if needed */
+    color: palevioletred; /* Adjust this if needed */
+    
+    font-weight: bold;
+    
+    font-family: 'Cursive', 'Fantasy';
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
   
   /* Responsive design */
   @media (max-width: 750px) {

@@ -13,6 +13,8 @@ const Navbar = () => {
           <span className="logo-line2">Express</span>
         </div>
       </Link>
+      <div className="admin-greeting">Hi, Admin</div>
+
       <img className='profile' src={assets.profile_image} alt="Profile" />
     </div>
   );
