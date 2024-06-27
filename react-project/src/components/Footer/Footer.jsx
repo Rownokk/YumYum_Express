@@ -1,9 +1,5 @@
-
 import React from 'react';
 import './Footer.css'; // Make sure you have your CSS file imported correctly
-import { assets } from '../../assets/assets'; // Assuming you have other assets imported here
-
-// Assuming you have imported other assets like facebook_icon, twitter_icon, linkedin_icon
 
 const Footer = () => {
     return (
@@ -16,9 +12,15 @@ const Footer = () => {
                     </div>
                     <p>Delight at Your Doorstep. Bon Appétit!</p>
                     <div className="footer-social-icons">
-                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/facebook-icon-lower-third-design-template-2c2951e75c681b1dd5baec3f08078607_screen.jpg?ts=1655212723" alt=""/>
-                        <img src="https://png.pngtree.com/png-clipart/20190613/original/pngtree-twitter-icon-logo-png-image_3560522.jpg" alt=""/>
-                        <img src="https://png.pngtree.com/element_our/md/20180506/md_5aeedf924a6c8.jpg"alt=""/>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/facebook-icon-lower-third-design-template-2c2951e75c681b1dd5baec3f08078607_screen.jpg?ts=1655212723" alt="Facebook"/>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                            <img src="https://png.pngtree.com/png-clipart/20190613/original/pngtree-twitter-icon-logo-png-image_3560522.jpg" alt="Twitter"/>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <img src="https://png.pngtree.com/element_our/md/20180506/md_5aeedf924a6c8.jpg" alt="LinkedIn"/>
+                        </a>
                         <a href="https://github.com/Rownokk/YumYum_Express.git" target="_blank" rel="noopener noreferrer">
                             <img src="https://cdn4.iconfinder.com/data/icons/social-media-and-logos-11/32/Logo_Github-512.png" alt="GitHub"/>
                         </a>
