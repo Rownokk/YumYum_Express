@@ -24,7 +24,7 @@ gap: 20px;
 }
 .sidebar-option.active{
     background-color: #fff0ed;
-    border-color: rgb(223, 67, 40);
+    border-color: crimson;
 }
 @media(max-width:900px){
 
