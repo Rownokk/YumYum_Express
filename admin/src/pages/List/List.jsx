@@ -3,7 +3,7 @@ import './List.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const List = ({url}) => {
+const List = ({ url }) => {
     
     const [list, setList] = useState([]);
 
@@ -58,7 +58,7 @@ const List = ({url}) => {
                         <p>{item.name}</p>
                         <p>{item.category}</p>
                         <p>Tk.{item.price}</p>
-                        <p onClick={() => removeFood(item._id)} className='cursor remove-action'>X</p>
+                        <button onClick={() => removeFood(item._id)} className='remove-button'>Remove</button>
                     </div>
                 ))}
             </div>

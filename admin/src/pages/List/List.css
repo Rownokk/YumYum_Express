@@ -1,69 +1,83 @@
-/* List.css */
 .list {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list p {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .list-table {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    font-family: 'Arial', sans-serif;
-}
-
-.list p {
-    font-size: 18px;
-    color: black;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.list-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.list-table-format {
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+  }
+  
+  .list-table-format {
+    display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
-}
-
-.list-table-format.title {
-    background-color: lightcoral;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .list-table-format.title {
     font-weight: bold;
-}
-
-.list-table-format img {
+    background-color: #f0f0f0;
+  }
+  
+  .list-table-format img {
     width: 50px;
-    height: auto;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 50%;
     object-fit: cover;
-}
-
-.remove-action {
-    color: red;
+    margin-right: 10px;
+  }
+  
+  .remove-button {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.remove-action:hover {
-    color: darkred;
-}
-
-@media (max-width: 600px) {
+    transition: background-color 0.3s ease;
+  }
+  
+  .remove-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  @media (max-width: 768px) {
+    .list {
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  
+    .list p {
+      font-size: 1.2em;
+    }
+  
     .list-table-format {
-        grid-template-columns: 1fr 3fr 1fr;
-        gap: 15px;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    
-    .list-table-format.title {
-        display: none;
+  
+    .list-table-format img {
+      margin-bottom: 10px;
     }
-}
+  
+    .remove-button {
+      margin-top: 10px;
+    }
+  }
+  
