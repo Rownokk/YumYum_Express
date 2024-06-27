@@ -1,5 +1,6 @@
 import React from 'react';
-import './Footer.css'; // Make sure you have your CSS file imported correctly
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
     return (
@@ -30,10 +31,10 @@ const Footer = () => {
                 <div className="footer-content-center">
                     <h2>COMPANY</h2>
                     <ul>
-                        <li>Home</li>
-                        <li>About us</li>
-                        <li>Delivery</li>
-                        <li>Privacy policy</li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/delivery">Delivery</Link></li>
+                        <li><Link to="/privacy">Privacy Policy</Link></li>
                     </ul>
                 </div>
                 
