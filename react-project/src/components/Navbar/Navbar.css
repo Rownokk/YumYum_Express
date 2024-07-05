@@ -118,6 +118,17 @@
   border: 1px solid crimson;
   outline: 2px solid white;
   list-style: none;
+  cursor: pointer;
+}
+.nav-profile-dropdown img{
+  width: 20px;
+}
+.nav-profile-dropdown li{
+  display: flex;
+  align-items: center;
+  gap:10px;
+  cursor: pointer;
+
 }
 .navbar-menu {
   list-style: none;
