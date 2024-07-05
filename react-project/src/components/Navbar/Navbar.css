@@ -123,6 +123,9 @@
 .nav-profile-dropdown img{
   width: 20px;
 }
+.nav-profile-dropdown li:hover{
+  color: crimson;
+}
 .nav-profile-dropdown li{
   display: flex;
   align-items: center;
