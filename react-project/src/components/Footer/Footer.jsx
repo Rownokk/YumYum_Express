@@ -22,9 +22,8 @@ const Footer = () => {
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                             <img src="https://png.pngtree.com/element_our/md/20180506/md_5aeedf924a6c8.jpg" alt="LinkedIn"/>
                         </a>
-                        <a href="https://github.com/Rownokk/YumYum_Express.git" target="_blank" rel="noopener noreferrer">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-and-logos-11/32/Logo_Github-512.png" alt="GitHub"/>
-                        </a>
+                        
+                        
                     </div>
                 </div>
                 
