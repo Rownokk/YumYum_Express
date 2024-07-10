@@ -1,7 +1,7 @@
 /* About.css */
 
 .about {
-  max-width: 800px;
+  max-width:fit-content;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Arial', sans-serif;

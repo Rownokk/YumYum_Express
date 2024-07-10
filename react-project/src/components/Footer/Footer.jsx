@@ -22,8 +22,6 @@ const Footer = () => {
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                             <img src="https://png.pngtree.com/element_our/md/20180506/md_5aeedf924a6c8.jpg" alt="LinkedIn"/>
                         </a>
-                        
-                        
                     </div>
                 </div>
                 
@@ -52,3 +50,4 @@ const Footer = () => {
 }
 
 export default Footer;
+

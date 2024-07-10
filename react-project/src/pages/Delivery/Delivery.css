@@ -1,5 +1,5 @@
 .delivery {
-    max-width: 900px;
+    max-width:fit-content;
     margin: 20px auto;
     padding: 20px;
     font-family: Arial, sans-serif;
