@@ -37,9 +37,22 @@ const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     });
-    console.log(orderItems);
-  
-    // Further logic can be added here
+    let orderData={
+      address:data,
+      items:orderItems,
+      amount:getTotalCartAmount()+2,
+    }
+    let response = await axios.post(url+"/api/order/place", orderData, {headers:{token}})
+    if (response.data.success) {
+
+      const {session_url} = response.data;
+      
+      window.location.replace(session_url); I
+      
+      }
+      else{
+        alert("Error");
+      }
   };
   
   return (
