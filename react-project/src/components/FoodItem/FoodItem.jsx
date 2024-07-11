@@ -4,7 +4,7 @@ import './FoodItem.css';
 import { StoreContext } from '../../context/StoreContext';
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart,url } = useContext(StoreContext);
   const [count, setCount] = useState(0); // State to manage the count for the current item
 
   const handleAddToCart = () => {
