@@ -25,7 +25,7 @@ const Cart = () => {
                     if (!item) return null;
                     return (
                         <div key={itemId} className='cart-items-item'>
-                            <img src={item.image} alt=""/>
+                            <img src={url+"/images/"+item.image} alt=""/>
                             <p>{item.name}</p>
                             <p>Tk.{item.price}</p>
                             <p>{cartItems[itemId]}</p>
