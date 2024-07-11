@@ -10,7 +10,6 @@
     padding: 20px 8vw;
     padding-top: 20px;
     padding-bottom: 0px; /* Reduced bottom padding */
-
     margin-top: 100px;
     position: relative;
     overflow: hidden;
@@ -53,6 +52,10 @@
 .footer-content-left li:hover, .footer-content-right li:hover, .footer-content-center li:hover {
     text-decoration: underline;
     color: crimson; /* Dark orange color for hover effect */
+}
+
+.footer-content-center {
+    margin-left: -25px; /* Shift the "COMPANY" section slightly to the left */
 }
 
 .footer-content-right h2, .footer-content-center h2 {

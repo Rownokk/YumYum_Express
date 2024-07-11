@@ -31,7 +31,7 @@ const logout =()=>{
         <a href='#footer' onClick={() => setMenu("Contact Us")} className={menu === "Contact Us" ? "active" : ""}>Contact Us</a>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="Search Icon" />
+  
         <div className="navbar-search-icon">
           <Link to='/cart'>
           <img src={assets.basket_icon} alt="Basket Icon" /></Link>

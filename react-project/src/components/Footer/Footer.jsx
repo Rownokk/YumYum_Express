@@ -39,7 +39,7 @@ const Footer = () => {
                     <h2>GET IN TOUCH</h2>
                     <ul>
                         <li>+1-342-543-1234</li>
-                        <li>contact@YumYum_Express.com</li>
+                        <li><a href="mailto:contact@YumYum_Express.com">contact@YumYum_Express.com</a></li>
                     </ul>
                 </div>
             </div>

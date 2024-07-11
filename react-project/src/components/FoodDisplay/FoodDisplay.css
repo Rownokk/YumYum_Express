@@ -5,7 +5,7 @@
     padding: 20px; /* Adding padding for breathing room */
     background-color: #f9f9f9; /* Light gray background for contrast */
     border-radius: 15px; /* Rounded corners for a softer look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);/* Subtle shadow for elevation */
   
     /* Additional styles for an extraordinary look */
     border: 1px solid #ddd; /* Light border for separation */

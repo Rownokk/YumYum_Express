@@ -1,32 +1,83 @@
-.app-download{
-    margin: auto auto;
-    margin-top: 100px;
-    font-size: max(3vw,20px);
-    text-align: center;
-    font-weight: 500;
-}
-.app-download-platforms{
+.app-download {
     display: flex;
-    justify-content: center;
-    gap: max(2vw,10px);
-    margin-top: 40px;
-}
-.app-download-platforms img{
-    width: max(30vw,120px);
-    max-width: 180px;
-    transition: 0.5s;
-    cursor: pointer;
-}
-.app-download-platforms img:hover{
-    transform: scale(1.05);
+    justify-content: space-between;
+    align-items: right;
+    margin: auto;
+    margin-top: 100px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 2000px;
 }
 
-.app-download p {
-    color: lightcoral;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 0.7em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.app-download-left {
+    display: flex;
+    align-items: center;
+}
+
+.app-download-image {
+    width: 180px; /* Adjust size as needed */
+    max-width: 100%; /* Ensures it scales down if necessary */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Adjust margin for spacing */
+}
+
+
+.app-download-text {
+    text-align: left; 
+    max-width: 600px;
+}
+
+.app-download-right {
+    text-align: right;
+}
+
+.app-download-title {
+    color: #666;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.app-download-subtitle {
+    color: #777;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.app-download-description {
+    color: #555;
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.app-download-platforms {
+    display: flex;
+    gap: 20px;
+}
+
+.app-download-platforms img {
+    width: 150px;
+    max-width: 180px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.app-download-platforms img:hover {
+    transform: scale(1.1);
 }
