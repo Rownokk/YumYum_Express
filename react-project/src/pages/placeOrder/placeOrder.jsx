@@ -1,6 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import './placeOrder.css';
 import { StoreContext } from '../../context/StoreContext';
+
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, food_list, cartItems } = useContext(StoreContext);
@@ -20,10 +21,6 @@ const PlaceOrder = () => {
     const { name, value } = event.target;
     setData(prevData => ({ ...prevData, [name]: value }));
   };
- 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   const placeOrder = async (event) => {
     event.preventDefault();
@@ -37,22 +34,20 @@ const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     });
-    let orderData={
-      address:data,
-      items:orderItems,
-      amount:getTotalCartAmount()+2,
-    }
-    let response = await axios.post(url+"/api/order/place", orderData, {headers:{token}})
-    if (response.data.success) {
 
-      const {session_url} = response.data;
-      
-      window.location.replace(session_url); I
-      
-      }
-      else{
-        alert("Error");
-      }
+    let orderData = {
+      address: data,
+      items: orderItems,
+      amount: getTotalCartAmount() + 2,
+    };
+
+    let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
+    if (response.data.success) {
+      const { session_url } = response.data;
+      window.location.replace(session_url);
+    } else {
+      alert("Error");
+    }
   };
   
   return (
