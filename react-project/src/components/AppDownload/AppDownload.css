@@ -52,7 +52,7 @@
 }
 
 .faq-icon {
-    color: crimson;
+    color:black;
     margin-right: 10px;
     font-size: 1.5em;
 }
@@ -60,7 +60,7 @@
 .faq-question {
     font-size: 1.3em;
     font-weight: bold;
-    color: black;
+    color: crimson;
     flex: 1;
 }
 

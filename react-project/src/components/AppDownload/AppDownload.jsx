@@ -5,8 +5,8 @@ import { FaQuestionCircle, FaCheckCircle } from 'react-icons/fa';
 const AppDownload = () => {
     const faqData = [
         {
-            question: "What is the return policy?",
-            answer: "You can return any item within 30 days of purchase. Make sure it is in its original condition."
+            question: "What is the delivery time?",
+            answer: "Delivery times typically range from 30 to 60 minutes, depending on your location and the restaurant's current order volume."
         },
         {
             question: "How can I track my order?",
@@ -17,8 +17,8 @@ const AppDownload = () => {
             answer: "We accept all major credit cards, PayPal, and Apple Pay."
         },
         {
-            question: "How do I contact customer service?",
-            answer: "You can contact customer service via email at support@example.com or call us at (123) 456-7890."
+            question: "What should I do if my food is incorrect or missing?",
+            answer: "If there’s an issue with your order, please contact our customer support through the app or call our hotline. We'll assist you with resolving the issue."
         }
     ];
 
