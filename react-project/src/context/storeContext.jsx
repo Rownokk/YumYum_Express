@@ -1,22 +1,29 @@
 import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
-import axios from "axios"
+// Named export for the context
 export const StoreContext = createContext(null);
 
+// Default export for the provider
 const StoreContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState({});
-    const url ="http://localhost:2000"
-    const [token,setToken]=useState("");
-    const [food_list,setFoodList] =useState([])
+    const [token, setToken] = useState('');
+    const [food_list, setFoodList] = useState([]);
+    const url = 'http://localhost:2000';
+
     const addToCart = async (itemId) => {
         setCartItems((prev) => ({
             ...prev,
             [itemId]: (prev[itemId] || 0) + 1,
-        }));  
-          if(token){
-            await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
-                }
+        }));
+        if (token) {
+            try {
+                await axios.post(url + '/api/cart/add', { itemId }, { headers: { token } });
+            } catch (error) {
+                console.error('Error adding to cart:', error);
+            }
+        }
     };
 
     const removeFromCart = async (itemId) => {
@@ -29,8 +36,12 @@ const StoreContextProvider = ({ children }) => {
             }
             return updatedItems;
         });
-        if (token){
-await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
+        if (token) {
+            try {
+                await axios.post(url + '/api/cart/remove', { itemId }, { headers: { token } });
+            } catch (error) {
+                console.error('Error removing from cart:', error);
+            }
         }
     };
 
@@ -38,34 +49,45 @@ await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-
-
-                let iteminfo = food_list.find((product) => product._id === item)
-
-                totalAmount += iteminfo.price * cartItems[item];
+                const itemInfo = food_list.find((product) => product._id === item);
+                if (itemInfo) {
+                    totalAmount += itemInfo.price * cartItems[item];
+                }
             }
         }
         return totalAmount;
-    }
-    const fetchFoodList = async ()=>{
-        const response= await axios.get(url+"/api/food/list");
-        setFoodList(response.data.data)
-    }
-    const loadCartData=async (token)=>{
-        const response=await axios.post(url+"/api/cart/get",{ },{headers:{token}});
-    setCartItems(response.data.cartData);
-    }
-    useEffect(()=>{
-        
-        async function loadData(){
-           await fetchFoodList() ;
-           if(localStorage.getItem("token")){
-            setToken(localStorage.getItem("token"));
-            await loadCartData(localStorage.getItem("token"));
+    };
+
+    const fetchFoodList = async () => {
+        try {
+            const response = await axios.get(url + '/api/food/list');
+            setFoodList(response.data.data);
+        } catch (error) {
+            console.error('Error fetching food list:', error);
         }
+    };
+
+    const loadCartData = async (token) => {
+        try {
+            const response = await axios.post(url + '/api/cart/get', {}, { headers: { token } });
+            setCartItems(response.data.cartData);
+        } catch (error) {
+            console.error('Error loading cart data:', error);
         }
+    };
+
+    useEffect(() => {
+        const loadData = async () => {
+            await fetchFoodList();
+            const savedToken = localStorage.getItem('token');
+            if (savedToken) {
+                setToken(savedToken);
+                await loadCartData(savedToken);
+            }
+        };
         loadData();
-    },[])
+    }, []);
+
     const contextValue = {
         food_list,
         cartItems,
@@ -74,8 +96,7 @@ await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
         getTotalCartAmount,
         url,
         token,
-        setToken
-
+        setToken,
     };
 
     return (
