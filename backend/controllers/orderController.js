@@ -43,7 +43,7 @@ const placeOrder = async (req, res) => {
         unit_amount: 2 * 100 * 80 // Delivery charge amount in paisa (multiplied by 100)
       },
       quantity: 1
-    });
+    }); v
 
     // Create a Stripe Checkout session
     const session = await stripe.checkout.sessions.create({
@@ -62,5 +62,7 @@ const placeOrder = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+const verifyOrder = async (req, res) => {
+}
 
-export { placeOrder };
+export { placeOrder,verifyOrder };
