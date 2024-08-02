@@ -15,7 +15,7 @@ const About = () => {
       <p>
         Thank you for choosing YumYum Express. We look forward to serving you and making every meal a memorable one. Bon Appétit!
       </p>
-      <p><h2>Developed By-</h2></p>
+      <p><h2>Developed By</h2></p>
       <h2>Rownok Jahan Mowmita</h2>
       <h3>ID - 20220104151</h3>
       <h2>Umme Jamila</h2>
