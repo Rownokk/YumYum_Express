@@ -1,7 +1,7 @@
 /* About.css */
 
 .about {
-  max-width:fit-content;
+  max-width: fit-content;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Arial', sans-serif;
@@ -22,31 +22,45 @@
 .about p {
   margin-bottom: 20px;
   font-size: 1.1em;
+  color: lightcoral;
 }
 
 .about h2, .about h3 {
   text-align: center;
-  color: #2c3e50;
+  color: #333;
   margin-bottom: 10px;
 }
 
 .about h2 {
   font-size: 1.5em;
+  color: crimson;
 }
 
 .about h3 {
   font-size: 1.2em;
   margin-top: -10px;
+  color: lightcoral;
+  position: relative;
 }
 
-  @media (max-width: 768px) {
-    .about {
-      padding: 15px;
-      font-size: 0.9em;
-    }
-  
-    .about h1 {
-      font-size: 2em;
-    }
+.about h3::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px; /* Adjust thickness as needed */
+  background: lightcoral; /* Match the color of your text */
+  position: absolute;
+  left: 25%; /* Center the underline */
+  bottom: -5px; /* Adjust position as needed */
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 15px;
+    font-size: 0.9em;
   }
-  
+
+  .about h1 {
+    font-size: 2em;
+  }
+}

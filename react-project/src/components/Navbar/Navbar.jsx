@@ -27,7 +27,7 @@ const logout =()=>{
       <ul className="navbar-menu">
         <Link to='/' onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""}>Home</Link>
         <a href='#explore-menu' onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>Menu</a>
-        <a href='#faq' onClick={() => setMenu("FAQ")} className={menu === "FAQ" ? "active" : ""}>FAQ</a>
+        <a href='#faq' onClick={() => setMenu("FAQs")} className={menu === "FAQs" ? "active" : ""}>FAQs</a>
         <a href='#footer' onClick={() => setMenu("Contact Us")} className={menu === "Contact Us" ? "active" : ""}>Contact Us</a>
       </ul>
       <div className="navbar-right">
