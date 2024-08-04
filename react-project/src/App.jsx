@@ -9,6 +9,7 @@ import About from './pages/About/About';
 import Delivery from './pages/Delivery/Delivery';
 import Privacy from './pages/Privacy/Privacy';
 import LoginPopup from "./components/LoginPopup/LoginPopup"
+import Verify from "./pages/Verify/Verify"
 const App = () => {
   const [showLogin,setShowLogin] = useState(false)
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/delivery' element={<Delivery />} />
           <Route path='/privacy' element={<Privacy />} />
+        <Route path ='./verify' element ={<Verify/>}/>
         </Routes>
       </div>
       <Footer />
