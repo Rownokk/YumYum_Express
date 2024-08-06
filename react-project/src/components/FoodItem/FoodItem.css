@@ -88,4 +88,8 @@
   .add-to-cart-button:hover {
     background-color: #e55e40;
   }
+  .food-item-rating {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
   
