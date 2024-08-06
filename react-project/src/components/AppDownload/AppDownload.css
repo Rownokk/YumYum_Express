@@ -39,6 +39,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .faq-item:hover {
@@ -46,13 +47,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.faq-question-container, .faq-answer-container {
+.faq-question-container {
     display: flex;
     align-items: center;
 }
 
 .faq-icon {
-    color:black;
+    color: black;
     margin-right: 10px;
     font-size: 1.5em;
 }
@@ -64,9 +65,14 @@
     flex: 1;
 }
 
-.faq-answer {
+.faq-answer-container {
+    display: flex;
+    align-items: center;
     margin-top: 10px;
+}
+
+.faq-answer {
     font-size: 1.1em;
-    color:lightcoral;
+    color: lightcoral;
     flex: 1;
 }

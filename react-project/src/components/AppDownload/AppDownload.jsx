@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AppDownload.css';
 import { FaQuestionCircle, FaCheckCircle } from 'react-icons/fa';
 
 const AppDownload = () => {
+    const [activeIndex, setActiveIndex] = useState(null);
+
     const faqData = [
         {
             question: "What is the delivery time?",
@@ -22,20 +24,26 @@ const AppDownload = () => {
         }
     ];
 
+    const handleClick = (index) => {
+        setActiveIndex(index === activeIndex ? null : index);
+    };
+
     return (
         <div className='faq' id='faq'>
             <div className="faq-container">
                 <h2 className="faq-title">Frequently Asked Questions</h2>
                 {faqData.map((item, index) => (
                     <div key={index} className="faq-item">
-                        <div className="faq-question-container">
+                        <div className="faq-question-container" onClick={() => handleClick(index)}>
                             <FaQuestionCircle className="faq-icon" />
                             <p className="faq-question">{item.question}</p>
                         </div>
-                        <div className="faq-answer-container">
-                            <FaCheckCircle className="faq-icon" />
-                            <p className="faq-answer">{item.answer}</p>
-                        </div>
+                        {activeIndex === index && (
+                            <div className="faq-answer-container">
+                                <FaCheckCircle className="faq-icon" />
+                                <p className="faq-answer">{item.answer}</p>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -44,4 +52,3 @@ const AppDownload = () => {
 }
 
 export default AppDownload;
-
