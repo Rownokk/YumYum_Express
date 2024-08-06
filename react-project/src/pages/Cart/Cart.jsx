@@ -84,7 +84,7 @@ const Cart = () => {
                 </div>
                 <div className="cart-promocode">
                     <div>
-                        <p>ENTER 'mowmita' TO ENJOY 10% DISCOUNT!!!</p>
+                        <p>ENTER `mowmita` TO ENJOY 10% DISCOUNT!!!</p>
                         <div className="cart-promocode-input">
                             <input
                                 type="text"
