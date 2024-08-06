@@ -18,7 +18,7 @@ const Cart = () => {
     };
 
     const handlePromoCodeSubmit = () => {
-        if (promoCode === 'mowmita') {
+        if (promoCode === 'SYJ78OIG56') {
             setDiscount(0.1); // 10% discount
             setErrorMessage('Congratulationss!!'); // Clear error message on valid promo code
         } else {
@@ -84,7 +84,7 @@ const Cart = () => {
                 </div>
                 <div className="cart-promocode">
                     <div>
-                        <p>ENTER `mowmita` TO ENJOY 10% DISCOUNT!!!</p>
+                        <p>ENTER `SYJ78OIG56` TO ENJOY 10% DISCOUNT!!!</p>
                         <div className="cart-promocode-input">
                             <input
                                 type="text"
