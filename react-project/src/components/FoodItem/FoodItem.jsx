@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { assets } from '../../assets/assets';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import './FoodItem.css';
 import { StoreContext } from '../../context/StoreContext';
 
@@ -32,7 +33,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
         <span
           key={i}
           onClick={() => handleRatingChange(i)}
-          style={{ cursor: 'pointer', color: i <= rating ? 'gold' : 'gray' }}
+          style={{ cursor: 'pointer', color: i <= rating ? 'crimson' : 'gray' }}
         >
           ★
         </span>
@@ -62,10 +63,18 @@ const FoodItem = ({ id, name, price, description, image }) => {
         <img className='food-item-image' src={url + "/images/" + image} alt="" />
         <div className='food-item-counter'>
           {count > 0 && (
-            <img onClick={handleRemoveFromCart} src={assets.remove_icon_red} alt="" />
+            <FontAwesomeIcon 
+              icon={faMinusCircle} 
+              onClick={handleRemoveFromCart} 
+              style={{ color: 'red', cursor: 'pointer' }}
+            />
           )}
           {count > 0 && <p>{count}</p>}
-          <img onClick={handleAddToCart} src={assets.add_icon_green} alt="" />
+          <FontAwesomeIcon 
+            icon={faHeart} 
+            onClick={handleAddToCart} 
+            style={{ color: 'crimson', cursor: 'pointer' }}
+          />
         </div>
       </div>
       <div className="food-item-info">
