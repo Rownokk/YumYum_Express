@@ -1,95 +1,132 @@
 .food-item {
-    width: 100%;
-    margin: auto;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeIn 1s;
-    overflow: hidden; /* Ensure child elements don't overflow */
-  }
-  
-  .food-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-  }
-  
-  .food-item-image {
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-  }
-  
-  .food-item-info {
-    padding: 20px;
-  }
-  
-  .food-item-name-rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .food-item-name-rating p {
-    font-size: 18px; /* Slightly reduce font size for better balance */
-    font-weight: 600; /* Increase font weight for readability */
-  }
-  
-  .food-item-name-rating img {
-    width: 60px; /* Adjust image size */
-  }
-  
-  .food-item-desc {
-    color: #888; /* Softer color for description */
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .food-item-price {
-    color: tomato;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 8px 0; /* Slightly reduce top and bottom margin */
-  }
-  
-  .food-item-img-container {
-    position: relative;
-  }
-  
-  .food-item-counter {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Reduce gap between elements */
-    padding: 6px;
-    border-radius: 25px; /* Smaller border radius */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
-  }
-  
-  .food-item-counter img {
-    width: 24px; /* Adjust plus/minus icon size */
-  }
-  
-  .add-to-cart-button {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    padding: 8px 16px; /* Adjust padding */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .add-to-cart-button:hover {
-    background-color: #e55e40;
-  }
-  .food-item-rating {
-    font-size: 1.5em;
-    margin: 10px 0;
-  }
-  
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s;
+  overflow: hidden;
+  position: relative; /* Add position relative */
+}
+
+.food-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.food-item-image {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.food-item-info {
+  padding: 20px;
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.food-item-name-rating p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.food-item-name-rating img {
+  width: 60px;
+}
+
+.food-item-desc {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.food-item-price {
+  color: tomato;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.food-item-img-container {
+  position: relative;
+}
+
+.food-item-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-item-counter img {
+  width: 24px;
+}
+
+.add-to-cart-button {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #e55e40;
+}
+
+.food-item-rating {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/* Add a higher z-index and position it relative to the parent */
+.food-item .review-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  width: 80%;
+  max-width: 500px;
+  display: flex; /* Ensure flex display */
+  flex-direction: column;
+}
+
+.food-item .review-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.food-item .review-form textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.food-item .review-form button {
+  margin: 4px 0;
+  padding: 8px 12px;
+  cursor: pointer;
+}

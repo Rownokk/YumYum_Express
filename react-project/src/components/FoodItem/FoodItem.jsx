@@ -5,24 +5,24 @@ import { StoreContext } from '../../context/StoreContext';
 
 const FoodItem = ({ id, name, price, description, image }) => {
   const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
-  const [count, setCount] = useState(0); // State to manage the count for the current item
-  const [rating, setRating] = useState(0); // State to manage the rating for the current item
+  const [count, setCount] = useState(0);
+  const [rating, setRating] = useState(0);
+  const [showReviewForm, setShowReviewForm] = useState(false);
 
   const handleAddToCart = () => {
-    setCount(count + 1); // Increment the count when adding to cart
+    setCount(count + 1);
     addToCart(id);
   };
 
   const handleRemoveFromCart = () => {
     if (count > 0) {
-      setCount(count - 1); // Decrement the count when removing from cart
+      setCount(count - 1);
       removeFromCart(id);
     }
   };
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
-    // Optionally send the rating to the backend here
   };
 
   const renderStars = () => {
@@ -39,6 +39,21 @@ const FoodItem = ({ id, name, price, description, image }) => {
       );
     }
     return stars;
+  };
+
+  const handleReviewButtonClick = () => {
+    setShowReviewForm(true);
+  };
+
+  const handleReviewFormClose = () => {
+    setShowReviewForm(false);
+  };
+
+  const handleReviewSubmit = (event) => {
+    event.preventDefault();
+    const reviewText = event.target.review.value;
+    console.log(`Review for item ${id}: ${reviewText}`);
+    setShowReviewForm(false);
   };
 
   return (
@@ -62,7 +77,17 @@ const FoodItem = ({ id, name, price, description, image }) => {
         </div>
         <p className='food-item-desc'>{description}</p>
         <p className='food-item-price'>Tk.{price}</p>
+        <button onClick={handleReviewButtonClick}>Leave a Review</button>
       </div>
+      {showReviewForm && (
+        <div className='review-form'>
+          <form onSubmit={handleReviewSubmit}>
+            <textarea name="review" placeholder="Write your review here" required></textarea>
+            <button type="submit">Submit</button>
+            <button type="button" onClick={handleReviewFormClose}>Cancel</button>
+          </form>
+        </div>
+      )}
     </div>
   );
 }
