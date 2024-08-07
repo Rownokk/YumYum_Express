@@ -10,6 +10,7 @@ import Delivery from './pages/Delivery/Delivery';
 import Privacy from './pages/Privacy/Privacy';
 import LoginPopup from "./components/LoginPopup/LoginPopup"
 import Verify from "./pages/Verify/Verify"
+import Chat from './components/Chat/Chat'; 
 const App = () => {
   const [showLogin,setShowLogin] = useState(false)
   return (
@@ -29,6 +30,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
+      <Chat /> 
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faMinusCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faMinusCircle, faTimes, faPencilAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import './FoodItem.css';
 import { StoreContext } from '../../context/StoreContext';
 
@@ -111,10 +111,16 @@ const FoodItem = ({ id, name, price, description, image }) => {
         </div>
         <p className='food-item-desc'>{description}</p>
         <p className='food-item-price'>Tk.{price}</p>
-        <button onClick={handleReviewButtonClick} className="review-btn">Leave a Review</button>
-        <button onClick={handleShowAllReviews} className={`review-btn ${showAllReviews ? 'all-reviews' : ''}`}>
-          {showAllReviews ? 'Hide Reviews' : `All Reviews (${reviews.length})`}
-        </button>
+        <div className="review-buttons">
+          <button onClick={handleReviewButtonClick} className="review-btn">Leave a Review</button>
+          <FontAwesomeIcon 
+            icon={faStar} 
+             
+            onClick={handleShowAllReviews} 
+            style={{ color: 'lightcoral', cursor: 'pointer', marginLeft: '10px' }}
+            className="review-icon"
+          />
+        </div>
       </div>
       {showReviewForm && (
         <div className='review-form'>
@@ -129,25 +135,29 @@ const FoodItem = ({ id, name, price, description, image }) => {
           </form>
         </div>
       )}
-      {showAllReviews && reviews.length > 0 && (
+      {showAllReviews && (
         <div className='all-reviews'>
           <FontAwesomeIcon
             icon={faTimes}
             onClick={handleCloseAllReviews}
             className="close-icon"
           />
-          {reviews.map((review, index) => (
-            <div key={index} className='review-item'>
-              <p>{review.text}</p>
-              <div className='review-rating'>
-                {renderStars().map((star, i) => (
-                  <span key={i} style={{ color: i < review.rating ? 'crimson' : 'gray' }}>
-                    ★
-                  </span>
-                ))}
+          {reviews.length > 0 ? (
+            reviews.map((review, index) => (
+              <div key={index} className='review-item'>
+                <p>{review.text}</p>
+                <div className='review-rating'>
+                  {renderStars().map((star, i) => (
+                    <span key={i} style={{ color: i < review.rating ? 'crimson' : 'gray' }}>
+                      ★
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No reviews yet.</p>
+          )}
         </div>
       )}
     </div>
