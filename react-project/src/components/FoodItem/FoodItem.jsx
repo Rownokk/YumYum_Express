@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faMinusCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './FoodItem.css';
 import { StoreContext } from '../../context/StoreContext';
 
@@ -9,6 +9,22 @@ const FoodItem = ({ id, name, price, description, image }) => {
   const [count, setCount] = useState(0);
   const [rating, setRating] = useState(0);
   const [showReviewForm, setShowReviewForm] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const [reviews, setReviews] = useState([]);
+
+  // Load reviews from local storage when the component mounts
+  useEffect(() => {
+    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    setReviews(storedReviews.filter(review => review.itemId === id));
+  }, [id]);
+
+  // Save reviews to local storage
+  useEffect(() => {
+    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    // Update reviews for the current item only
+    const updatedReviews = storedReviews.filter(review => review.itemId !== id);
+    localStorage.setItem('reviews', JSON.stringify([...updatedReviews, ...reviews]));
+  }, [reviews, id]);
 
   const handleAddToCart = () => {
     setCount(count + 1);
@@ -53,8 +69,17 @@ const FoodItem = ({ id, name, price, description, image }) => {
   const handleReviewSubmit = (event) => {
     event.preventDefault();
     const reviewText = event.target.review.value;
-    console.log(`Review for item ${id}: ${reviewText}`);
+    const newReview = { itemId: id, text: reviewText, rating };
+    setReviews([...reviews, newReview]);
     setShowReviewForm(false);
+  };
+
+  const handleShowAllReviews = () => {
+    setShowAllReviews(!showAllReviews);
+  };
+
+  const handleCloseAllReviews = () => {
+    setShowAllReviews(false);
   };
 
   return (
@@ -86,15 +111,43 @@ const FoodItem = ({ id, name, price, description, image }) => {
         </div>
         <p className='food-item-desc'>{description}</p>
         <p className='food-item-price'>Tk.{price}</p>
-        <button onClick={handleReviewButtonClick}>Leave a Review</button>
+        <button onClick={handleReviewButtonClick} className="review-btn">Leave a Review</button>
+        <button onClick={handleShowAllReviews} className={`review-btn ${showAllReviews ? 'all-reviews' : ''}`}>
+          {showAllReviews ? 'Hide Reviews' : `All Reviews (${reviews.length})`}
+        </button>
       </div>
       {showReviewForm && (
         <div className='review-form'>
+          <FontAwesomeIcon
+            icon={faTimes}
+            onClick={handleReviewFormClose}
+            className="close-icon"
+          />
           <form onSubmit={handleReviewSubmit}>
             <textarea name="review" placeholder="Write your review here" required></textarea>
             <button type="submit">Submit</button>
-            <button type="button" onClick={handleReviewFormClose}>Cancel</button>
           </form>
+        </div>
+      )}
+      {showAllReviews && reviews.length > 0 && (
+        <div className='all-reviews'>
+          <FontAwesomeIcon
+            icon={faTimes}
+            onClick={handleCloseAllReviews}
+            className="close-icon"
+          />
+          {reviews.map((review, index) => (
+            <div key={index} className='review-item'>
+              <p>{review.text}</p>
+              <div className='review-rating'>
+                {renderStars().map((star, i) => (
+                  <span key={i} style={{ color: i < review.rating ? 'crimson' : 'gray' }}>
+                    ★
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>
