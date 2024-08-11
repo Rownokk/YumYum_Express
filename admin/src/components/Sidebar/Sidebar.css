@@ -1,34 +1,50 @@
-.sidebar{
+.sidebar {
     width: 18%;
     min-height: 100vh;
-    border:1.5px solid #a9a9a9 ;
+    border: 1.5px solid crimson;
     border-top: 0;
-    font-size: max(1vw,10px);
+    font-size: max(1vw, 10px);
+    background-color: #fff0ed; /* Light coral background */
+}
 
+.sidebar-options {
+    padding-top: 50px;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.sidebar-options{
-padding-top: 50px;
-padding-left: 20%;
-display:flex;
-flex-direction: column;
-gap: 20px;
-}
-.sidebar-option{
+
+.sidebar-option {
     display: flex;
     align-items: center;
-    gap :12px;
-    border: 1px solid #a9a9a9;
+    gap: 12px;
+    border: 1px solid crimson;
     padding: 8px 10px;
-    border-radius: 3px 0px 3px;
+    border-radius: 5px 0 5px 0; /* Slightly more rounded corners */
     cursor: pointer;
+    background-color: #f8d7da; /* Subtle light coral background for each option */
+    color: crimson; /* Crimson text color */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effects */
 }
-.sidebar-option.active{
-    background-color: #fff0ed;
+
+.sidebar-option:hover {
+    background-color: #f5c6cb; /* Darker light coral on hover */
     border-color: crimson;
 }
-@media(max-width:900px){
 
-    .sidebar-option p{
+.sidebar-option.active {
+    background-color: crimson; /* Crimson background for active option */
+    color: #fff; /* White text color for better contrast */
+    border-color: crimson;
+}
+
+.sidebar-option img {
+    filter: invert(35%) sepia(100%) saturate(600%) hue-rotate(-50deg) brightness(90%) contrast(90%); /* Adjust icon color to match crimson theme */
+}
+
+@media (max-width: 900px) {
+    .sidebar-option p {
         display: none;
     }
 }
