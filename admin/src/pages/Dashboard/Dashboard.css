@@ -1,0 +1,91 @@
+.dashboard {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #f4f4f4;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: crimson;
+}
+
+.dashboard-charts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.chart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.chart img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.dashboard-recent {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-recent h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.dashboard-recent table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-recent th, .dashboard-recent td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-recent th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.dashboard-recent td {
+    background-color: #fff;
+}

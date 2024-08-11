@@ -46,6 +46,17 @@
   }
 }
 
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8vw;
+  background-color: #fffaf0; /* Light cream background for a classic feel */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid crimson; /* Crimson bottom border for a classic touch */
+}
+
 /* Logo styling (unchanged) */
 .logo {
   display: flex;
@@ -85,15 +96,59 @@
   animation: colorPulse 3s infinite, pulse 3s infinite;
 }
 
-/* Navbar styling */
-.navbar {
+/* Navbar links styling */
+.nav-links {
   display: flex;
-  justify-content: space-between;
+  gap: 20px; /* Space between links */
+}
+
+.nav-link {
+  color: crimson; /* Crimson text color */
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif; /* Classical font style */
+  text-decoration: none; /* Remove underline from links */
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link:hover {
+  background-color: crimson; /* Change background on hover */
+  color: #fffaf0; /* Light cream text on hover */
+}
+
+/* Admin controls styling */
+.admin-controls {
+  display: flex;
   align-items: center;
-  padding: 0 8vw;
-  background-color: #fffaf0; /* Light cream background for a classic feel */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid crimson; /* Crimson bottom border for a classic touch */
+  gap: 15px; /* Space between admin greeting, logout, and profile */
+}
+
+/* Admin Greeting styling */
+.admin-greeting {
+  font-size: 18px;
+  color: crimson; /* Crimson text color */
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif; /* Classical font style */
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Logout button styling */
+.logout {
+  color: crimson;
+  border: 2px solid crimson;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout:hover {
+  background-color: crimson;
+  color: #fffaf0;
 }
 
 /* Profile image styling */
@@ -102,19 +157,6 @@
   border-radius: 50%; /* Circular profile image */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 2px solid crimson; /* Crimson border around the profile image */
-  cursor:pointer
-}
-
-/* Admin Greeting styling */
-.admin-greeting {
-  text-align: right;
-  margin-right: 10px;
-  font-size: 18px;
-  color: crimson; /* Crimson text color */
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif; /* Classical font style */
-  letter-spacing: 1.5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive design */
@@ -129,7 +171,19 @@
       align-items: flex-start;
   }
 
-  .profile {
+  .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%; /* Full width for nav options */
+      margin-top: 10px;
+  }
+
+  .nav-link {
+      width: 100%; /* Full width for each option */
+      text-align: center;
+  }
+
+  .admin-controls {
       align-self: flex-end;
   }
 }

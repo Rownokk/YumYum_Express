@@ -1,0 +1,66 @@
+/* src/pages/Settings/Settings.css */
+.settings-container {
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.settings-title {
+    font-size: 2rem;
+    color: crimson;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h2 {
+    font-size: 1.5rem;
+    color: lightcoral;
+    border-bottom: 2px solid crimson;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: crimson;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-group input {
+    padding: 8px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+.settings-btn {
+    padding: 10px 15px;
+    background-color: crimson;
+    color: #fffaf0;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.settings-btn:disabled {
+    background-color: lightcoral;
+}
