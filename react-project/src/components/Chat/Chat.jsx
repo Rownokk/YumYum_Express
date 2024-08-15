@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faTimes } from '@fortawesome/free-solid-svg-icons'; // Changed icon
 import './Chat.css';
 
 const Chat = () => {
@@ -8,6 +8,7 @@ const Chat = () => {
   const [newMessage, setNewMessage] = useState('');
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [contextMenu, setContextMenu] = useState({ visible: false, messageIndex: null, x: 0, y: 0 });
   const chatEndRef = useRef(null);
 
   useEffect(() => {
@@ -47,15 +48,44 @@ const Chat = () => {
     setIsChatOpen(!isChatOpen);
   };
 
+  const handleContextMenu = (event, index) => {
+    event.preventDefault();
+    setContextMenu({
+      visible: true,
+      messageIndex: index,
+      x: event.pageX,
+      y: event.pageY,
+    });
+  };
+
+  const handleCopyMessage = () => {
+    const messageText = messages[contextMenu.messageIndex].text;
+    navigator.clipboard.writeText(messageText);
+    setContextMenu({ ...contextMenu, visible: false });
+  };
+
+  const handleDeleteMessage = () => {
+    const updatedMessages = messages.filter((_, index) => index !== contextMenu.messageIndex);
+    setMessages(updatedMessages);
+    setContextMenu({ ...contextMenu, visible: false });
+  };
+
+  const closeContextMenu = () => {
+    setContextMenu({ ...contextMenu, visible: false });
+  };
+
   return (
     <div className={`chat-container ${isChatOpen ? 'open' : ''}`}>
-      <FontAwesomeIcon
-        icon={faComments}
-        className="chat-icon"
-        onClick={handleChatToggle}
-      />
+      <div className="chat-icon-container">
+        <div className="chat-icon-label">Need Help?</div>
+        <FontAwesomeIcon
+          icon={faUtensils} // Updated to food-related icon
+          className="chat-icon"
+          onClick={handleChatToggle}
+        />
+      </div>
       {isChatOpen && (
-        <div className="chat-window">
+        <div className="chat-window" onClick={closeContextMenu}>
           <div className="chat-header">
             <h3>Chat with Us</h3>
             <FontAwesomeIcon
@@ -66,7 +96,11 @@ const Chat = () => {
           </div>
           <div className="chat-messages">
             {messages.map((message, index) => (
-              <div key={index} className={`chat-message ${message.user}`}>
+              <div
+                key={index}
+                className={`chat-message ${message.user}`}
+                onContextMenu={(e) => handleContextMenu(e, index)}
+              >
                 <div className="message-content">
                   <span>{message.text}</span>
                   <div className="message-timestamp">
@@ -92,6 +126,15 @@ const Chat = () => {
             />
             <button type="submit">Send</button>
           </form>
+        </div>
+      )}
+      {contextMenu.visible && (
+        <div
+          className="context-menu"
+          style={{ top: contextMenu.y, left: contextMenu.x }}
+        >
+          <div onClick={handleCopyMessage}>Copy Message</div>
+          <div onClick={handleDeleteMessage}>Delete Message</div>
         </div>
       )}
     </div>
