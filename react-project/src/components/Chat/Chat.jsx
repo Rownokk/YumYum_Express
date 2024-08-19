@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUtensils, faTimes } from '@fortawesome/free-solid-svg-icons'; // Changed icon
+import { faUtensils, faTimes, faTrashAlt, faCopy } from '@fortawesome/free-solid-svg-icons';
 import './Chat.css';
 
 const Chat = () => {
@@ -29,9 +29,11 @@ const Chat = () => {
   const handleSendMessage = (event) => {
     event.preventDefault();
     if (newMessage.trim() !== '') {
-      setMessages([...messages, { text: newMessage, timestamp: new Date(), user: 'user' }]);
+      const userMessage = { text: newMessage, timestamp: new Date(), user: 'user' };
+      setMessages([...messages, userMessage]);
       setNewMessage('');
       setIsTyping(false);
+      generateBotReply();
     }
   };
 
@@ -42,6 +44,24 @@ const Chat = () => {
     } else {
       setIsTyping(true);
     }
+  };
+
+  const generateBotReply = () => {
+    const botResponses = [
+      "Thank you for reaching out!",
+      "How can we assist you today?",
+      "We're here to help!",
+      "Let us know if you need anything.",
+      "Thanks for chatting with us!"
+    ];
+
+    const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+    setTimeout(() => {
+      setMessages(prevMessages => [
+        ...prevMessages,
+        { text: randomResponse, timestamp: new Date(), user: 'bot' }
+      ]);
+    }, 1000);
   };
 
   const handleChatToggle = () => {
@@ -79,7 +99,7 @@ const Chat = () => {
       <div className="chat-icon-container">
         <div className="chat-icon-label">Need Help?</div>
         <FontAwesomeIcon
-          icon={faUtensils} // Updated to food-related icon
+          icon={faUtensils}
           className="chat-icon"
           onClick={handleChatToggle}
         />
@@ -105,6 +125,20 @@ const Chat = () => {
                   <span>{message.text}</span>
                   <div className="message-timestamp">
                     {new Date(message.timestamp).toLocaleTimeString()}
+                  </div>
+                  <div className="message-options">
+                    <FontAwesomeIcon
+                      icon={faCopy}
+                      className="message-option-icon"
+                      onClick={handleCopyMessage}
+                      title="Copy Message"
+                    />
+                    <FontAwesomeIcon
+                      icon={faTrashAlt}
+                      className="message-option-icon"
+                      onClick={handleDeleteMessage}
+                      title="Delete Message"
+                    />
                   </div>
                 </div>
               </div>
