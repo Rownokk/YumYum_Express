@@ -1,33 +1,73 @@
-.payment-confirmation {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #e8f5e9;
-    border-radius: 8px;
-    text-align: center;
+.payment-confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, crimson, lightcoral);
+  font-family: 'Poppins', sans-serif;
+}
+
+.confirmation-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+}
+
+.confirmation-icon {
+  font-size: 4rem;
+  color: crimson;
+  margin-bottom: 1rem;
+}
+
+.confirmation-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.confirmation-message {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.confirmation-message strong {
+  color: crimson;
+  font-weight: bold;
+}
+
+.back-home-button {
+  background: crimson;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-home-button:hover {
+  background: darkred;
+}
+
+.confirmation-content i {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  
-  .payment-confirmation h2 {
-    color: crimson;
-    margin-bottom: 20px;
+  40% {
+    transform: translateY(-15px);
   }
-  
-  .payment-confirmation p {
-    font-size: 18px;
-    margin-bottom: 20px;
+  60% {
+    transform: translateY(-8px);
   }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color:crimson ;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: crimson;
-  }
-  
+}
