@@ -11,6 +11,8 @@ import Privacy from './pages/Privacy/Privacy';
 import LoginPopup from "./components/LoginPopup/LoginPopup"
 import Verify from "./pages/Verify/Verify"
 import Chat from './components/Chat/Chat'; 
+import PaymentOptions from './pages/PaymentOptions/PaymentOptions';
+import PaymentConfirmation from './pages/PaymentConfirmation/PaymentConfirmation';
 const App = () => {
   const [showLogin,setShowLogin] = useState(false)
   return (
@@ -27,6 +29,9 @@ const App = () => {
           <Route path='/delivery' element={<Delivery />} />
           <Route path='/privacy' element={<Privacy />} />
         <Route path ='./verify' element ={<Verify/>}/>
+        
+        <Route path="/payment-options" element={<PaymentOptions />} />
+        <Route path="/payment-confirmation" element={<PaymentConfirmation />} />
         </Routes>
       </div>
       <Footer />

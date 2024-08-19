@@ -1,7 +1,7 @@
-import React , { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './placeOrder.css';
 import { StoreContext } from '../../context/StoreContext';
-
+import { useNavigate } from 'react-router-dom';
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, food_list, cartItems } = useContext(StoreContext);
@@ -17,19 +17,20 @@ const PlaceOrder = () => {
     phone: ''
   });
 
+  const navigate = useNavigate();
+
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
     setData(prevData => ({ ...prevData, [name]: value }));
   };
 
-  const placeOrder = async (event) => {
+  const proceedToPayment = (event) => {
     event.preventDefault();
-  
+
     let orderItems = [];
-  
     food_list.forEach((item) => {
       if (cartItems[item._id] > 0) {
-        let itemInfo = { ...item }; // Create a copy of the item
+        let itemInfo = { ...item };
         itemInfo["quantity"] = cartItems[item._id];
         orderItems.push(itemInfo);
       }
@@ -38,20 +39,17 @@ const PlaceOrder = () => {
     let orderData = {
       address: data,
       items: orderItems,
-      amount: getTotalCartAmount() + 2,
+      amount: getTotalCartAmount() + 50,  // Assuming 50 is the delivery fee
     };
 
-    let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
-    if (response.data.success) {
-      const { session_url } = response.data;
-      window.location.replace(session_url);
-    } else {
-      alert("Error");
-    }
+    // Save orderData to localStorage or pass it as state when navigating
+    console.log(orderData); // Debugging to see order data
+    localStorage.setItem('orderData', JSON.stringify(orderData));
+    navigate('/payment-options');
   };
-  
+
   return (
-    <form onSubmit={placeOrder} className='place-order'>
+    <form onSubmit={proceedToPayment} className='place-order'>
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-fields">
