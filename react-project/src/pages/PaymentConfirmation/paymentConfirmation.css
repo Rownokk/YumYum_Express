@@ -1,93 +1,148 @@
 .payment-confirmation-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, crimson, lightcoral);
-  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  background: linear-gradient(135deg, #fffbf5, #f3e6e5);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 30px auto;
+  position: relative;
 }
 
 .confirmation-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  width: 90%;
+  width: 100%;
 }
 
 .confirmation-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   color: crimson;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 .confirmation-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .confirmation-message {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.confirmation-message strong {
-  color: crimson;
-  font-weight: bold;
-}
-
-.back-home-button {
-  background: crimson;
-  color: #fff;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.back-home-button:hover {
-  background: darkred;
+  margin-bottom: 20px;
 }
 
 .review-section {
-  margin-top: 2rem;
-  text-align: center;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.reviews-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.toggle-reviews-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.review-heading {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .star-rating {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
-.star-rating span {
-  cursor: pointer;
-  color: gray;
-  font-size: 2rem;
+.review-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .submit-review-button {
-  background: crimson;
-  color: #fff;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
+  background-color: crimson;
+  color: white;
   border: none;
-  border-radius: 8px;
+  padding: 12px 25px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
 }
 
 .submit-review-button:hover {
-  background: darkred;
+  background-color: darkred;
 }
 
 .submission-message {
+  margin-top: 10px;
   color: green;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.reviews-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.reviews-heading {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.reviews-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.review-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.review-rating {
+  font-size: 1.5rem;
+  color: crimson;
+}
+
+.review-item p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+.bottom-button-container {
+  margin-top: 20px;
+}
+
+.back-home-button {
+  background-color: #f54e4e;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.back-home-button:hover {
+  background-color: #e63946;
 }
