@@ -1,51 +1,3 @@
-/* Keyframes for animations (unchanged) */
-@keyframes slideInFromRight {
-  0% {
-      opacity: 0;
-      transform: translateX(100%);
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.05);
-  }
-}
-
-@keyframes colorPulse {
-  0%, 100% {
-      color: lightcoral;
-  }
-  50% {
-      color: crimson;
-  }
-}
-
-@keyframes swing {
-  20% {
-      transform: rotate(15deg);
-  }
-  40% {
-      transform: rotate(-10deg);
-  }
-  60% {
-      transform: rotate(5deg);
-  }
-  80% {
-      transform: rotate(-5deg);
-  }
-  100% {
-      transform: rotate(0deg);
-  }
-}
-
 /* Navbar styling */
 .navbar {
   display: flex;
@@ -57,7 +9,7 @@
   border-bottom: 2px solid crimson; /* Crimson bottom border for a classic touch */
 }
 
-/* Logo styling (unchanged) */
+/* Logo styling */
 .logo {
   display: flex;
   align-items: center;
@@ -74,7 +26,7 @@
 .logo-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .logo-line1 {
@@ -153,37 +105,96 @@
 
 /* Profile image styling */
 .profile {
-  height: 40px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  width: 50px; /* Ensure image is circular */
   border-radius: 50%; /* Circular profile image */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 2px solid crimson; /* Crimson border around the profile image */
+  cursor: pointer; /* Indicates clickable */
+  transition: transform 0.3s; /* Smooth zoom effect on hover */
+}
+
+.profile:hover {
+  transform: scale(1.1);
+}
+
+/* Sign-in form styling */
+.sign-in-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  z-index: 1000; /* Ensure the form appears above other content */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sign-in-form h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.sign-in-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sign-in-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sign-in-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.sign-in-form button:hover {
+  background-color: crimson; /* Highlight color on hover */
 }
 
 /* Responsive design */
 @media (max-width: 750px) {
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 5vw; /* Adjust padding for smaller screens */
   }
 
   .logo-text {
-      align-items: flex-start;
+    align-items: flex-start;
   }
 
   .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%; /* Full width for nav options */
-      margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Full width for nav options */
+    margin-top: 10px;
   }
 
   .nav-link {
-      width: 100%; /* Full width for each option */
-      text-align: center;
+    width: 100%; /* Full width for each option */
+    text-align: center;
   }
 
   .admin-controls {
-      align-self: flex-end;
+    align-self: flex-end;
   }
 }
