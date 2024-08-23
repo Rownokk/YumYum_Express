@@ -20,10 +20,10 @@ const Cart = () => {
     const handlePromoCodeSubmit = () => {
         if (promoCode === 'SYJ78OIG56') {
             setDiscount(0.1); // 10% discount
-            setErrorMessage('Congratulationss!!'); // Clear error message on valid promo code
+            setErrorMessage('Congratulations!! Discount applied.'); // Success message
         } else {
-            setDiscount(0); // no discount
-            setErrorMessage('Sorry, this is not a valid promo code.');
+            setDiscount(0); // No discount
+            setErrorMessage('Sorry, this is not a valid promo code.'); // Error message
         }
     };
 
@@ -32,11 +32,26 @@ const Cart = () => {
     const discountAmount = totalAmount * discount;
     const finalTotal = totalAmount - discountAmount + deliveryFee;
 
+    const handleProceedToCheckout = () => {
+        const checkoutData = {
+            cartItems,
+            discount,
+            totalAmount,
+            finalTotal,
+            deliveryFee,
+        };
+
+        // Save checkoutData to localStorage
+        localStorage.setItem('checkoutData', JSON.stringify(checkoutData));
+
+        navigate('/order');
+    };
+
     return (
         <div className='cart'>
             <div className="cart-items">
                 <div className="cart-items-title">
-                    <p>Items</p>
+                    <p>Image</p>
                     <p>Title</p>
                     <p>Price</p>
                     <p>Quantity</p>
@@ -65,11 +80,11 @@ const Cart = () => {
                     <div>
                         <div className="cart-total-details">
                             <p>Subtotal</p>
-                            <p>Tk.{totalAmount}</p>
+                            <p>Tk.{totalAmount.toFixed(2)}</p>
                         </div>
                         <div className="cart-total-details">
                             <p>Delivery Fee</p>
-                            <p>Tk {deliveryFee}</p>
+                            <p>Tk {deliveryFee.toFixed(2)}</p>
                         </div>
                         <div className="cart-total-details">
                             <p>Discount</p>
@@ -80,7 +95,7 @@ const Cart = () => {
                             <b>Tk.{finalTotal.toFixed(2)}</b>
                         </div>
                     </div>
-                    <button onClick={() => navigate('/order')}>PROCEED TO CHECKOUT</button>
+                    <button onClick={handleProceedToCheckout}>PROCEED TO CHECKOUT</button>
                 </div>
                 <div className="cart-promocode">
                     <div>
@@ -103,4 +118,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
