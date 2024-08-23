@@ -1,54 +1,54 @@
 .food-item {
   width: 100%;
+  max-width: 300px;
   margin: auto;
   border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  animation: fadeIn 1s;
+  background-color: #fff;
   overflow: hidden;
-  position: relative; /* Add position relative */
+  position: relative;
 }
 
 .food-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.food-item-image {
-  width: 100%;
-  border-radius: 15px 15px 0 0;
-}
-
-.food-item-info {
-  padding: 20px;
-}
-
-.food-item-name-rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.food-item-name-rating p {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.food-item-desc {
-  color: #888;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.food-item-price {
-  color: lightcoral;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 8px 0;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .food-item-img-container {
   position: relative;
+  overflow: hidden;
+}
+
+.food-item-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.food-item-img-container:hover .food-item-image {
+  transform: scale(1.05);
+}
+
+.food-item-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.food-item-info p {
+  margin: 8px 0;
+}
+
+.food-item-desc {
+  color: #666;
+  font-size: 14px;
+}
+
+.food-item-price {
+  color: #ff6347;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .food-item-counter {
@@ -58,128 +58,29 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.food-item-counter img {
-  width: 24px;
-}
-
-.add-to-cart-button {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ff6347;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.add-to-cart-button:hover {
-  background-color: #e55e40;
-}
-
-.food-item-rating {
-  font-size: 1.5em;
-  margin: 10px 0;
-}
-
-.food-item-rating span {
-  cursor: pointer;
-  color: gray;
-}
-
-/* Review Form and All Reviews Styling */
-.food-item .review-form,
-.food-item .all-reviews {
-  position: absolute;
-  bottom: 20px; /* Ensure they appear above the item */
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  border: 1px solid #ccc;
-  padding: 16px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  width: 80%;
-  max-width: 500px;
-  box-sizing: border-box;
-}
-
-.review-form {
-  max-height: 200px; /* Limit height to fit within container */
-}
-
-.review-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.review-form textarea {
-  width: 100%;
-  height: 100px;
-  margin-bottom: 8px;
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.review-form button {
-  margin: 4px 0;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: crimson;
-  color: #fff;
-}
-
-.review-form button:hover {
-  background-color:lightcoral;
-}
-
-.all-reviews {
-  max-height: 300px; /* Height to fit within container */
-  overflow-y: auto; /* Enable vertical scroll */
-  color: crimson;
+.food-item-counter p {
+  margin: 0;
+  font-size: 16px;
   font-weight: 600;
 }
 
-.close-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color:crimson;
+.food-item-counter .fa-minus-circle {
+  color: red;
   cursor: pointer;
-  font-size: 1.5em;
 }
 
-.close-icon:hover {
-  color:lightcoral;
+.food-item-counter .fa-heart {
+  color: crimson;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.review-item {
-  margin-bottom: 15px; /* Spacing between reviews */
-}
-
-.review-item .review-rating {
-  color: lightcoral;
-  margin-top: 5px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.food-item-counter .fa-heart:hover {
+  transform: scale(1.1);
 }
