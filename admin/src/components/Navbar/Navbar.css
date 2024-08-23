@@ -4,9 +4,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 8vw;
-  background-color: #fffaf0; /* Light cream background for a classic feel */
+  background-color: #fffaf0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid crimson; /* Crimson bottom border for a classic touch */
+  border-bottom: 2px solid crimson;
+  position: relative;
+}
+
+/* Blurred background effect */
+.sign-in-active .blur-background {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
 }
 
 /* Logo styling */
@@ -15,12 +22,6 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
-  animation: slideInFromRight 1s ease-out;
-}
-
-.logo img {
-  height: 40px; /* Adjust size as needed */
-  margin-right: 10px; /* Space between logo image and text */
 }
 
 .logo-text {
@@ -35,7 +36,6 @@
   font-family: 'Times New Roman', Times, serif;
   color: lightcoral;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  animation: pulse 3s infinite, swing 1.5s ease-in-out 1s;
 }
 
 .logo-line2 {
@@ -45,21 +45,20 @@
   font-family: 'Cursive', 'Fantasy';
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  animation: colorPulse 3s infinite, pulse 3s infinite;
 }
 
 /* Navbar links styling */
 .nav-links {
   display: flex;
-  gap: 20px; /* Space between links */
+  gap: 20px;
 }
 
 .nav-link {
-  color: crimson; /* Crimson text color */
+  color: crimson;
   font-size: 16px;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif; /* Classical font style */
-  text-decoration: none; /* Remove underline from links */
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
   padding: 8px 12px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -67,23 +66,23 @@
 }
 
 .nav-link:hover {
-  background-color: crimson; /* Change background on hover */
-  color: #fffaf0; /* Light cream text on hover */
+  background-color: crimson;
+  color: #fffaf0;
 }
 
 /* Admin controls styling */
 .admin-controls {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between admin greeting, logout, and profile */
+  gap: 15px;
 }
 
 /* Admin Greeting styling */
 .admin-greeting {
   font-size: 18px;
-  color: crimson; /* Crimson text color */
+  color: crimson;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif; /* Classical font style */
+  font-family: 'Times New Roman', Times, serif;
   letter-spacing: 1.5px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -103,21 +102,6 @@
   color: #fffaf0;
 }
 
-/* Profile image styling */
-.profile {
-  height: 50px; /* Adjust size as needed */
-  width: 50px; /* Ensure image is circular */
-  border-radius: 50%; /* Circular profile image */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 2px solid crimson; /* Crimson border around the profile image */
-  cursor: pointer; /* Indicates clickable */
-  transition: transform 0.3s; /* Smooth zoom effect on hover */
-}
-
-.profile:hover {
-  transform: scale(1.1);
-}
-
 /* Sign-in form styling */
 .sign-in-form {
   position: fixed;
@@ -130,8 +114,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 300px;
-  z-index: 1000; /* Ensure the form appears above other content */
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
 .sign-in-form h3 {
@@ -156,7 +139,7 @@
 .sign-in-form button {
   width: 100%;
   padding: 10px;
-  background-color: #333;
+  background-color: crimson;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -166,7 +149,17 @@
 }
 
 .sign-in-form button:hover {
-  background-color: crimson; /* Highlight color on hover */
+  background-color: #333;
+}
+
+/* Blurred background on sign-in */
+.sign-in-active .navbar {
+  filter: blur(8px);
+}
+
+.sign-in-active .nav-links,
+.sign-in-active .admin-controls {
+  pointer-events: none; /* Disable interaction with blurred elements */
 }
 
 /* Responsive design */
@@ -175,7 +168,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    padding: 0 5vw; /* Adjust padding for smaller screens */
+    padding: 0 5vw;
   }
 
   .logo-text {
@@ -185,12 +178,12 @@
   .nav-links {
     flex-direction: column;
     align-items: flex-start;
-    width: 100%; /* Full width for nav options */
+    width: 100%;
     margin-top: 10px;
   }
 
   .nav-link {
-    width: 100%; /* Full width for each option */
+    width: 100%;
     text-align: center;
   }
 

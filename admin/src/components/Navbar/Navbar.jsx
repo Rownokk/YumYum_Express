@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import { assets } from '../../assets/assets';
 
 const Navbar = ({ onSignIn, isSignedIn }) => {
   const [showSignIn, setShowSignIn] = useState(!isSignedIn); // Show sign-in form if not signed in
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSignIn = (e) => {
     e.preventDefault();
     // Replace with actual sign-in logic
-    if (username && email) {
+    if (username && email && password) {
       setShowSignIn(false);
       onSignIn(true); // Notify parent component about successful sign-in
     }
@@ -24,7 +24,7 @@ const Navbar = ({ onSignIn, isSignedIn }) => {
   };
 
   return (
-    <div className='navbar'>
+    <div className={`navbar ${showSignIn ? 'sign-in-active' : ''}`}>
       {isSignedIn ? (
         <>
           <Link to='/' className="logo">
@@ -43,7 +43,6 @@ const Navbar = ({ onSignIn, isSignedIn }) => {
           <div className="admin-controls">
             <div className="admin-greeting">Hi, Admin</div>
             <Link to="/logout" className="nav-link logout" onClick={handleLogout}>Logout</Link>
-           
           </div>
         </>
       ) : (
@@ -57,6 +56,10 @@ const Navbar = ({ onSignIn, isSignedIn }) => {
             <label>
               Email:
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </label>
+            <label>
+              Password:
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </label>
             <button type="submit">Sign In</button>
           </form>
