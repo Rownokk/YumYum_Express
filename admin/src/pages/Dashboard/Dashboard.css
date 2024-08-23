@@ -1,53 +1,68 @@
+/* Dashboard container */
 .dashboard {
     padding: 20px;
     flex-grow: 1;
     background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
 }
 
+/* Title styling */
 .dashboard-title {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
     margin-bottom: 20px;
 }
 
+/* Card container styling */
 .dashboard-cards {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
 }
 
+/* Individual card styling */
 .card {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
     margin: 0 10px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-bottom: 10px;
+    color: #555;
 }
 
 .card p {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     color: crimson;
 }
 
+/* Chart container styling */
 .dashboard-charts {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
 }
 
+/* Individual chart styling */
 .chart {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
     margin: 0 10px;
     text-align: center;
@@ -58,16 +73,18 @@
     border-radius: 5px;
 }
 
+/* Recent activity section styling */
 .dashboard-recent {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-recent h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .dashboard-recent table {
@@ -76,16 +93,17 @@
 }
 
 .dashboard-recent th, .dashboard-recent td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 .dashboard-recent th {
     background-color: #f8f8f8;
-    font-weight: bold;
+    font-weight: 600;
+    color: #666;
 }
 
 .dashboard-recent td {
-    background-color: #fff;
+    background-color: #ffffff;
 }
