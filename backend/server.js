@@ -10,7 +10,7 @@ import orderRouter from "./routes/orderRoute.js"
 
 //app config
 const app = express()
-const port= 2000
+const port= process.env.PORT || 2000;
 
 // middleware
 app.use(express.json())
