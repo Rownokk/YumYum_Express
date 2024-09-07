@@ -1,11 +1,12 @@
+/* FAQ Section */
 .faq {
     padding: 40px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     max-width: 900px;
     margin: 50px auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .faq-container {
@@ -15,36 +16,39 @@
 
 .faq-title {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em; /* Reduced font size */
     margin-bottom: 30px;
-    color: #333;
-    font-weight: bold;
+    color: crimson;
+    font-weight: 700;
     position: relative;
     padding-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .faq-title:after {
     content: '';
-    width: 60px;
-    height: 4px;
-    background: crimson;
+    width: 50px; /* Reduced size */
+    height: 3px;
+    background: lightcoral;
     display: block;
     margin: 10px auto 0;
 }
 
 .faq-item {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    background: #ffe6e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='crimson' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l9 9-1.5 1.5-6.5-6.5L6 11 4.5 9.5 12 2z'/><path d='M12 22s-1-3-1-5 1-5 1-5 1 3 1 5-1 5-1 5z'/></svg>"), auto;
+    font-size: 1em; /* Reduced font size */
 }
 
 .faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02); /* Slight hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question-container {
@@ -53,13 +57,13 @@
 }
 
 .faq-icon {
-    color: black;
+    color: crimson;
     margin-right: 10px;
-    font-size: 1.5em;
+    font-size: 1.5em; /* Reduced icon size */
 }
 
 .faq-question {
-    font-size: 1.3em;
+    font-size: 1.2em; /* Reduced question size */
     font-weight: bold;
     color: crimson;
     flex: 1;
@@ -69,10 +73,27 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .faq-answer {
-    font-size: 1.1em;
+    font-size: 1em; /* Reduced answer size */
     color: lightcoral;
     flex: 1;
+}
+
+.faq-check-icon {
+    margin-right: 10px;
+    font-size: 1.2em; /* Reduced check icon size */
+}
+
+/* Food-themed cursor */
+body {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='crimson' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l9 9-1.5 1.5-6.5-6.5L6 11 4.5 9.5 12 2z'/><path d='M12 22s-1-3-1-5 1-5 1-5 1 3 1 5-1 5-1 5z'/></svg>"), auto;
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
