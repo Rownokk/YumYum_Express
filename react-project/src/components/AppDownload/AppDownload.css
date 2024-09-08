@@ -85,6 +85,7 @@
 .faq-check-icon {
     margin-right: 10px;
     font-size: 1.2em; /* Reduced check icon size */
+    color: palevioletred;
 }
 
 /* Food-themed cursor */

@@ -1,3 +1,43 @@
+/* Glow effect for discount when promo code is applied */
+.glow-effect {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px crimson;
+    }
+    to {
+        box-shadow: 0 0 20px lightcoral, 0 0 30px crimson;
+    }
+}
+
+/* Shake animation for invalid promo code */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Error message style */
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Shake effect for error message */
+.error-shake {
+    animation: shake 0.5s;
+}
+
 /* Base Styles */
 .cart {
     display: flex;
@@ -24,7 +64,6 @@
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
     gap: 10px;
     align-items: center;
-    
 }
 
 .cart-items-title {
@@ -37,7 +76,6 @@
 .cart-items-item {
     padding: 10px 0;
     border-bottom: 1px solid #f5f5f5;
-    
 }
 
 .cart-items-item img {
@@ -52,16 +90,18 @@
 }
 
 .cart-items-item button {
-  
     color: #fff;
     border: none;
     padding: 6px 10px;
     border-radius: 4px;
+    background-color: crimson;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-
+.cart-items-item button:hover {
+    background-color: darkred;
+}
 
 .cart-bottom {
     width: 100%;
@@ -85,7 +125,6 @@
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    
 }
 
 .cart-total h2 {
@@ -113,7 +152,6 @@
     justify-content: space-between;
     margin-bottom: 10px;
     font-size: 1em;
-    
 }
 
 .cart-total-details b {
@@ -125,14 +163,16 @@
     padding: 10px;
     border: none;
     border-radius: 4px;
- 
+    background-color: crimson;
     color: #fff;
     font-size: 1em;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-
+.cart-total button:hover {
+    background-color: darkred;
+}
 
 .cart-promocode {
     padding: 20px;
@@ -145,7 +185,6 @@
 .cart-promocode p {
     margin: 0 0 10px;
     font-size: 1em;
-    
     font-weight: 600;
     letter-spacing: 0.5px;
     color: crimson;
@@ -183,16 +222,9 @@
 }
 
 .cart-promocode-input button:hover {
-    background-color: crimson;
+    background-color: darkred;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-.error-message {
-    color: red;
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 0.9em;
-}
-
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -270,4 +302,3 @@
         width: 100%;
     }
 }
-
