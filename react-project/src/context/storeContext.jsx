@@ -17,6 +17,14 @@ const StoreContextProvider = ({ children }) => {
             ...prev,
             [itemId]: (prev[itemId] || 0) + 1,
         }));
+    
+        // Reduce quantity in food_list
+        setFoodList(prevFoodList =>
+            prevFoodList.map(item =>
+                item._id === itemId ? { ...item, quantity: item.quantity - 1 } : item
+            )
+        );
+    
         if (token) {
             try {
                 await axios.post(url + '/api/cart/add', { itemId }, { headers: { token } });
@@ -25,6 +33,7 @@ const StoreContextProvider = ({ children }) => {
             }
         }
     };
+    
 
     const removeFromCart = async (itemId) => {
         setCartItems((prev) => {

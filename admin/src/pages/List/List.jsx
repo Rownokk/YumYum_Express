@@ -50,6 +50,7 @@ const List = ({ url }) => {
                     <b>Name</b>
                     <b>Category</b>
                     <b>Price</b>
+                    <b>Quantity</b>
                     <b>Action</b>
                 </div>  
                 {list.map((item, index) => (
@@ -58,6 +59,7 @@ const List = ({ url }) => {
                         <p>{item.name}</p>
                         <p>{item.category}</p>
                         <p>Tk.{item.price}</p>
+                        <p>Total.{item.quantity}</p>
                         <button onClick={() => removeFood(item._id)} className='remove-button'>Remove</button>
                     </div>
                 ))}

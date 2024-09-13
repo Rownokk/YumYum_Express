@@ -11,6 +11,7 @@ const Add = ({url}) => {
     name: '',
     description: '',
     price: '',
+    quantity:'',
     category: 'Salad',
   });
   const [items, setItems] = useState([]); // State to store fetched items
@@ -46,6 +47,7 @@ const Add = ({url}) => {
     formData.append('description', data.description);
     formData.append('price', Number(data.price));
     formData.append('category', data.category);
+    formData.append('quantity',data.quantity);
     formData.append('image', image);
     const response = await axios.post(`${url}/api/food/add`, formData);
     if (response.data.success) {
@@ -53,6 +55,7 @@ const Add = ({url}) => {
         name: '',
         description: '',
         price: '',
+        quantity:'',
         category: 'Salad',
       });
       setImage(null);
@@ -98,7 +101,7 @@ const Add = ({url}) => {
           <select onChange={onChangeHandler} name='category'>
             <option value='Salad'>Salad</option>
             <option value='Rolls'>Rolls</option>
-            <option value='Deserts'>Deserts</option>
+            <option value='Desserts'>Deserts</option>
             <option value='Sandwich'>Sandwich</option>
             <option value='Cake'>Cake</option>
             <option value='Pure Veg'>Pure Veg</option>
@@ -109,6 +112,10 @@ const Add = ({url}) => {
         <div className='add-price flex-col'>
           <p>Product price:</p>
           <input onChange={onChangeHandler} value={data.price} type='number' name='price' placeholder='Tk.20' />
+        </div>
+        <div className='add-quantity flex-col'>
+          <p>Product Quantity:</p>
+          <input onChange={onChangeHandler} value={data.quantity} type='number' name='quantity' placeholder='Total-5' />
         </div>
       </div>
       <button type='submit' className='add-btn'>ADD</button>
@@ -121,6 +128,7 @@ const Add = ({url}) => {
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             <p>{item.price}</p>
+            <p>{item.quantity}</p>
             <img src={`${url}/images/${item.image}`} alt={item.name} />
           </li>
         ))}

@@ -86,11 +86,13 @@
   }
   
   .add-category,
+  .add-quantity,
   .add-price {
     flex: 1;
   }
   
   .add-category select,
+  .add-quantity input,
   .add-price input {
     width: 100%;
     padding: 12px 15px;
@@ -103,6 +105,7 @@
   }
   
   .add-category select:focus,
+  .add-quantity input:focus,
   .add-price input:focus {
     border-color:  #0c0b0b;
   }

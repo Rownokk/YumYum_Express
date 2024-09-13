@@ -17,7 +17,9 @@ const FoodDisplay = ({ category }) => {
         <div className='food-display' id='food-display'>
             <h2>Top Dishes Near You</h2>
             <div className="food-display-list">
-                {food_list.map((item, index) => {
+                {food_list
+                  .filter(item => item.quantity > 0) // Filter out items with quantity 0
+                  .map((item, index) => {
                     if (category === "All" || category === item.category) {
                         return (
                             <div key={index} onClick={() => handleItemClick(item._id)}>
@@ -26,6 +28,7 @@ const FoodDisplay = ({ category }) => {
                                     name={item.name}
                                     description={item.description}
                                     price={item.price}
+                                    quantity={item.quantity}
                                     image={item.image}
                                 />
                             </div>
@@ -37,5 +40,6 @@ const FoodDisplay = ({ category }) => {
         </div>
     );
 };
+
 
 export default FoodDisplay;
