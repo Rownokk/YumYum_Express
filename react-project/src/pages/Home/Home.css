@@ -6,7 +6,7 @@ body {
     background: linear-gradient(to right, #f0f0f0, #ffffff); /* Soft gradient background */
     color: #333; /* Dark text color for readability */
     min-height: 100vh; /* Ensure the background covers the whole viewport height */
-    display: flex;
+
     justify-content: center;
     align-items: center;
 }
