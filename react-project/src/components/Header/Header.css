@@ -25,7 +25,7 @@
     top: 50%;
     transform: translateY(-50%);
     left: 5%; /* Adjusted left position for alignment */
-    color: #f0f0f0; /* Lighter text color */
+    color: whitesmoke; /* Lighter text color */
     font-family: 'Arial', sans-serif; /* Modern, professional font */
     padding: 20px;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
